@@ -1,6 +1,6 @@
 === Statically ===
 
-Contributors: statically, fransallen
+Contributors: statically, fransallen, alihusnainarshad
 Tags: optimization, minification, cdn, content delivery network
 Requires at least: 4.6
 Requires PHP: 7.2
@@ -13,9 +13,9 @@ The all-in-one solution for your WordPress static asset optimization and CDN.
 
 == Description ==
 
-Statically is a Content Delivery Network (CDN) that is optimized for all types of websites and static assets. The service allows you to minify CSS or JavaScript files, optimize and add transformation capabilities to images, so you can resize, crop, adjust quality, and even more.
+Statically is a Content Delivery Network (CDN) that is optimized for all types of websites and static assets. The service allows you to minify CSS and JavaScript files, optimize and add transformation capabilities to images, so you can resize, crop, adjust quality, and even more.
 
-It can be an all-in-one solution for static asset delivery, while using WordPress to manage your content, Statically optimizes all files.
+It can be an all-in-one solution for static asset delivery, while using WordPress to manage your content, Statically optimizes all your files.
 
 [**Statically**](https://statically.io/)
 
