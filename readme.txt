@@ -55,6 +55,9 @@ Statically is a free and public Content Delivery Network (CDN) for static assets
 
 == Changelog ==
 
+= 0.7 =
+* Option to replace CDNJS URL with Statically
+
 = 0.6.3 =
 * Add Community forum link
 
