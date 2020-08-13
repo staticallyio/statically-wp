@@ -37,6 +37,7 @@ class Statically_Rewriter
         $webp,
         $relative,
         $https,
+        $replace_cdnjs,
         $statically_api_key
     ) {
         $this->blog_url       = $blog_url;
@@ -49,6 +50,7 @@ class Statically_Rewriter
         $this->webp           = $webp;
         $this->relative       = $relative;
         $this->https          = $https;
+        $this->replace_cdnjs    = $replace_cdnjs;
         $this->statically_api_key = $statically_api_key;
         $this->blog_domain    = parse_url( $blog_url, PHP_URL_HOST );
         $this->blog_path      = parse_url( $blog_url, PHP_URL_PATH );
@@ -282,6 +284,14 @@ class Statically_Rewriter
 
         // regex rule end
         $regex_rule .= '/(?:((?:'.$dirs.')[^\"\')]+)|([^/\"\']+\.[^/\"\')]+))(?=[\"\')])#';
+
+        // replace CDNJS URL with Statically
+        if ( $this->replace_cdnjs ) {
+            $cdnjs_url = "cdnjs\.cloudflare\.com\/ajax\/";
+            $html = preg_replace(
+                "/(?:https?:)?\/\/$cdnjs_url(.*\.(?:css|js))/", Statically::CDN . '$1', $html
+            );
+        }
 
         // call the cdn rewriter callback
         $cdn_html = preg_replace_callback( $regex_rule, [$this, 'rewrite_url'], $html );

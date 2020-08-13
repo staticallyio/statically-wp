@@ -34,66 +34,26 @@ class Statically_Settings
      * @return array array with validated values
      */
     public static function validate_settings( $data ) {
-        if ( ! isset( $data['quality'] ) ) {
-            $data['quality'] = 0;
-        }
-        if ( ! isset( $data['width'] ) ) {
-            $data['width'] = 0;
-        }
-        if ( ! isset( $data['height'] ) ) {
-            $data['height'] = 0;
-        }
-        if ( ! isset( $data['smartresize'] ) ) {
-            $data['smartresize'] = 0;
-        }
-        if ( ! isset( $data['emoji'] ) ) {
-            $data['emoji'] = 0;
-        }
-        if ( ! isset( $data['favicon'] ) ) {
-            $data['favicon'] = 0;
-        }
-        if ( ! isset( $data['favicon_shape'] ) ) {
-            $data['favicon_shape'] = 'rounded';
-        }
-        if ( ! isset( $data['favicon_bg'] ) ) {
-            $data['favicon_bg'] = '#000000';
-        }
-        if ( ! isset( $data['favicon_color'] ) ) {
-            $data['favicon_color'] = '#ffffff';
-        }
-        if ( ! isset( $data['og'] ) ) {
-            $data['og'] = 0;
-        }
-        if ( ! isset( $data['og_theme'] ) ) {
-            $data['og_theme'] = 'light';
-        }
-        if ( ! isset( $data['og_theme'] ) ) {
-            $data['og_fontsize'] = 'medium';
-        }
-        if ( ! isset( $data['og_type'] ) ) {
-            $data['og_type'] = 'jpeg';
-        }
-        if ( ! isset( $data['wpadmin'] ) ) {
-            $data['wpadmin'] = 0;
-        }
-        if ( ! isset( $data['relative'] ) ) {
-            $data['relative'] = 0;
-        }
-        if ( ! isset( $data['https'] ) ) {
-            $data['https'] = 0;
-        }
-        if ( ! isset( $data['query_strings'] ) ) {
-            $data['query_strings'] = 0;
-        }
-        if ( ! isset( $data['wpcdn'] ) ) {
-            $data['wpcdn'] = 0;
-        }
-        if ( ! isset( $data['private'] ) ) {
-            $data['private'] = 0;
-        }
-        if ( ! isset( $data['statically_api_key'] ) ) {
-            $data['statically_api_key'] = '';
-        }
+        if ( ! isset( $data['quality'] ) ) { $data['quality'] = 0; }
+        if ( ! isset( $data['width'] ) ) { $data['width'] = 0; }
+        if ( ! isset( $data['height'] ) ) { $data['height'] = 0; }
+        if ( ! isset( $data['smartresize'] ) ) { $data['smartresize'] = 0; }
+        if ( ! isset( $data['emoji'] ) ) { $data['emoji'] = 0; }
+        if ( ! isset( $data['favicon'] ) ) { $data['favicon'] = 0; }
+        if ( ! isset( $data['favicon_shape'] ) ) { $data['favicon_shape'] = 'rounded'; }
+        if ( ! isset( $data['favicon_bg'] ) ) { $data['favicon_bg'] = '#000000'; }
+        if ( ! isset( $data['favicon_color'] ) ) { $data['favicon_color'] = '#ffffff'; }
+        if ( ! isset( $data['og'] ) ) { $data['og'] = 0; }
+        if ( ! isset( $data['og_theme'] ) ) { $data['og_theme'] = 'light'; }
+        if ( ! isset( $data['og_theme'] ) ) { $data['og_fontsize'] = 'medium'; }
+        if ( ! isset( $data['og_type'] ) ) { $data['og_type'] = 'jpeg'; }
+        if ( ! isset( $data['wpadmin'] ) ) { $data['wpadmin'] = 0; }
+        if ( ! isset( $data['relative'] ) ) { $data['relative'] = 0; }
+        if ( ! isset( $data['https'] ) ) { $data['https'] = 0; }
+        if ( ! isset( $data['query_strings'] ) ) { $data['query_strings'] = 0; }
+        if ( ! isset( $data['wpcdn'] ) ) { $data['wpcdn'] = 0; }
+        if ( ! isset( $data['private'] ) ) { $data['private'] = 0; }
+        if ( ! isset( $data['statically_api_key'] ) ) { $data['statically_api_key'] = ''; }
 
         return [
             'url'             => esc_url( $data['url'] ),
@@ -128,6 +88,7 @@ class Statically_Settings
             'wpcdn'           => (int)( $data['wpcdn'] ),
             'private'         => (int)( $data['private'] ),
             'dev'             => (int)( $data['dev'] ),
+            'replace_cdnjs'     => (int)( $data['replace_cdnjs'] ),
             'statically_api_key'  => esc_attr( $data['statically_api_key'] ),
         ];
     }

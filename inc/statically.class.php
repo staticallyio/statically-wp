@@ -169,6 +169,7 @@ class Statically
                 'wpcdn'          => '1',
                 'private'        => '0',
                 'dev'            => '0',
+                'replace_cdnjs'    => '0',
                 'statically_api_key' => '',
             ]
         );
@@ -274,6 +275,7 @@ class Statically
                 'wpcdn'           => 1,
                 'private'         => 0,
                 'dev'             => 0,
+                'replace_cdnjs'     => 0,
                 'statically_api_key'  => '',
             ]
         );
@@ -300,7 +302,7 @@ class Statically
             $options['webp'],
             $options['relative'],
             $options['https'],
-            $options['private'],
+            $options['replace_cdnjs'],
             $options['statically_api_key']
         );
     }

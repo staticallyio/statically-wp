@@ -3,10 +3,24 @@
 <div data-stly-layout="labs">
     <h3 class="title"><?php _e( 'Labs', 'statically' ); ?></h3>
     <p class="description">
-        <?php _e( 'Everyone likes to try things! This is a list of Beta features, these options are intended to try out new features from Statically for WordPress based websites. We will add related feature as main menu when we receive good feedback for it. Use wisely!', 'statically' ); ?>
+        <?php _e( 'Everyone likes try new things! This is a list of Beta features, these options are intended to try out new features from Statically for WordPress based websites. We will add related feature as main menu when we receive good feedback for it. Use wisely!', 'statically' ); ?>
     </p>
 
     <table class="form-table">
+        <tr valign="top">
+            <th scope="row">
+                <?php _e( 'Replace CDNJS', 'statically' ); ?>
+            </th>
+            <td>
+                <fieldset>
+                    <label for="statically_replace-cdnjs">
+                        <input type="checkbox" name="statically[replace_cdnjs]" id="statically_replace-cdnjs" value="1" <?php checked(1, $options['replace_cdnjs']) ?> />
+                        <?php _e( 'Replace existing CDNJS URL with Statically. Default: <code>OFF</code>', 'statically' ); ?>
+                    </label>
+                </fieldset>
+            </td>
+        </tr>
+
         <tr valign="top">
             <th scope="row">
                 <?php _e( 'Page Booster', 'statically' ); ?>
