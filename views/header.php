@@ -40,7 +40,6 @@ $statically_logo_url = plugin_dir_url( STATICALLY_FILE ) . 'static/statically.sv
         <li>
             <a data-stly-tab="tools" href="#tools">
                 <?php _e( 'Tools ', 'statically' ); ?>
-                <span class="new"><?php _e( 'New', 'statically' ); ?></span>
             </a>
         </li>
     <?php endif; ?>
