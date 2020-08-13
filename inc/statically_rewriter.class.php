@@ -19,6 +19,7 @@ class Statically_Rewriter
     var $webp           = false;    // enable WebP
     var $relative       = false;    // use CDN on relative paths
     var $https          = false;    // use CDN on HTTPS
+    var $replace_cdnjs  = false;    // replace CDNJS with Statically
     var $statically_api_key = null; // required API key for Statically
 
     /**

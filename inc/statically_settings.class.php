@@ -88,7 +88,7 @@ class Statically_Settings
             'wpcdn'           => (int)( $data['wpcdn'] ),
             'private'         => (int)( $data['private'] ),
             'dev'             => (int)( $data['dev'] ),
-            'replace_cdnjs'     => (int)( $data['replace_cdnjs'] ),
+            'replace_cdnjs'   => (int)( $data['replace_cdnjs'] ),
             'statically_api_key'  => esc_attr( $data['statically_api_key'] ),
         ];
     }
