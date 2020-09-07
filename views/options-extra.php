@@ -146,7 +146,7 @@
                 <fieldset>
                     <label for="statically_query_strings">
                         <input type="checkbox" name="statically[query_strings]" id="statically_query_strings" value="1" <?php checked(1, $options['query_strings']) ?> />
-                        <?php _e( 'Strip query strings like <code>?ver=1.0</code> from assets. Default: <code>ON</code>', 'statically' ); ?>
+                        <?php _e( 'Strip query strings like <code>?ver=1.0</code> from assets. Default: <code>OFF</code>', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>
