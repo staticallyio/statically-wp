@@ -61,7 +61,7 @@ Statically is a free and public Content Delivery Network (CDN) for static assets
 * Added Caching tab and its Purge Cache feature (Custom Domain required)
 * Added Support Us tab
 * Added Favicons service on Tools tab
-* Display notice when site don't have HTTPS
+* Display notice when the site doesn't have HTTPS
 * Display notice for Statically Sites CDN deprecation
 * Remove `cdn.statically.io/sites` URL
 
