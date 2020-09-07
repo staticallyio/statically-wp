@@ -6,7 +6,7 @@
     </div>
 
     <a href="https://statically.io/" target="_blank"><?php _e( 'About', 'statically'); ?></a>
-    <a href="https://wordpress.org/plugins/statically/#description" target="_blank"><?php _e( 'Features', 'statically'); ?></a>
+    <a href="https://wordpress.org/plugins/statically/#description-header" target="_blank"><?php _e( 'Features', 'statically'); ?></a>
     <a href="<?php echo admin_url( 'admin.php?page=statically-debugger' ); ?>"><?php _e( 'Debug', 'statically'); ?></a>
 
     <div class="social">
