@@ -17,6 +17,8 @@ class Statically_Rewriter
     var $width          = null;     // set image width
     var $height         = null;     // set image height
     var $webp           = false;    // enable WebP
+    var $css            = false;    // CDNize CSS files
+    var $js             = false;    // CDNize JS files
     var $relative       = false;    // use CDN on relative paths
     var $https          = false;    // use CDN on HTTPS
     var $replace_cdnjs  = false;    // replace CDNJS with Statically
@@ -36,6 +38,8 @@ class Statically_Rewriter
         $width,
         $height,
         $webp,
+        $css,
+        $js,
         $relative,
         $https,
         $replace_cdnjs,
@@ -49,6 +53,8 @@ class Statically_Rewriter
         $this->width          = $width;
         $this->height         = $height;
         $this->webp           = $webp;
+        $this->css            = $css;
+        $this->js             = $js;
         $this->relative       = $relative;
         $this->https          = $https;
         $this->replace_cdnjs    = $replace_cdnjs;
@@ -111,7 +117,15 @@ class Statically_Rewriter
             return $asset[0];
         }
 
-        $cdn_url = $this->cdn_url;
+        // Set default CDN URL: https://cdn.statically.io/sites/example.com
+        // before doing any rewrites
+        $cdn_url = Statically::CDN . 'sites/' . parse_url( $this->cdn_url, PHP_URL_HOST );
+
+        // Use user specified domain
+        if ( Statically::is_custom_domain() ) {
+            $cdn_url = $this->cdn_url;
+        }
+
         $blog_url = $this->relative_url( $this->blog_url );
         $subst_urls = [ 'http:'.$blog_url ];
 
@@ -123,9 +137,26 @@ class Statically_Rewriter
             ];
         }
 
-        // return original URL on non-custom domain
-        if ( !Statically::is_custom_domain()
-                && !preg_match( '/\.(bmp|gif|jpe?g|png|webp|svg)/i', $asset[0] ) ) {
+        // CDNize CSS file when CSS option is ON
+        // CDN URL: https://cdn.statically.io/css/example.com
+        if ( ! Statically::is_custom_domain()
+            && preg_match( '/\.css/i', $asset[0] ) && $this->css ) {
+            $cdn_url = str_replace( '/sites', '/css', $cdn_url );
+        }
+
+        // CDNize JS file when JS option is ON
+        // CDN URL: https://cdn.statically.io/js/example.com
+        if ( ! Statically::is_custom_domain()
+            && preg_match( '/\.js/i', $asset[0] ) && $this->js ) {
+            $cdn_url = str_replace( '/sites', '/js', $cdn_url );
+        }
+        
+        // return original URL for non-custom domain,
+        // if non-custom domain have CSS/JS CDN enabled then enable CDN
+        if ( ! Statically::is_custom_domain()
+                && ( ! preg_match( '/\.(css|js|bmp|gif|jpe?g|png|webp|svg)/i', $asset[0] )
+                || ( preg_match( '/\.(css)/i', $asset[0] ) && ! $this->css )
+                || ( preg_match( '/\.(js)/i', $asset[0] ) && ! $this->js ) ) ) {
             return $asset[0];
         }
 
@@ -146,7 +177,7 @@ class Statically_Rewriter
             }
 
             // use /img/
-            $cdn_url = str_replace( '/sites', '/img', $this->cdn_url );
+            $cdn_url = str_replace( '/sites', '/img', $cdn_url );
 
             // if user use a custom domain
             if ( Statically::is_custom_domain() && ( $this->quality || $this->width || $this->height || $this->webp ) ) {
@@ -156,7 +187,7 @@ class Statically_Rewriter
 
         // SVG image
         if ( preg_match( '/\.svg/i', $asset[0] ) ) {
-            $cdn_url = str_replace( '/sites', '/img', $this->cdn_url );
+            $cdn_url = str_replace( '/sites', '/img', $cdn_url );
         }
 
         // is it a protocol independent URL?
@@ -263,7 +294,7 @@ class Statically_Rewriter
      */
     public function rewrite( $html ) {
         // check if HTTPS and use CDN over HTTPS enabled
-        if ( ! $this->https && isset( $_SERVER["HTTPS"] ) && $_SERVER["HTTPS"] == 'on' ) {
+        if ( ! $this->https && statically_use_https() ) {
             return $html;
         }
 

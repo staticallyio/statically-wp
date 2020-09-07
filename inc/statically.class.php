@@ -8,6 +8,7 @@
 
 class Statically
 {
+    const API = 'https://api.statically.io/';
     const CDN = 'https://cdn.statically.io/';
     const WPCDN = 'https://cdn.statically.io/wp/';
 
@@ -28,7 +29,7 @@ class Statically
     public function __construct() {
         error_reporting(0);
 
-        $options = Statically::get_options( 'statically' );
+        $options = self::get_options( 'statically' );
         if ( $options['wpadmin'] ) {
             $base_action = 'init';
         } else {
@@ -77,16 +78,26 @@ class Statically
         /* admin notices */
         add_action( 'all_admin_notices', [ __CLASS__, 'statically_requirements_check' ] );
 
-        /* add illage usage notice */
-        if( empty( get_option( 'statically-illegal-cdnurl-notice-dismissed' ) ) ) {
-            add_action( 'admin_notices', [ __CLASS__, 'statically_illegal_cdnurl_notice' ] );
-        }
+        /* for non-custom domain */
+        if ( ! self::is_custom_domain() ) {
+            /* add illage usage notice */
+            if( empty( get_option( 'statically-illegal-cdnurl-notice-dismissed2' ) ) ) {
+                add_action( 'admin_notices', [ __CLASS__, 'statically_illegal_cdnurl_notice' ] );
+            }
         
-        /* ajax for illegal usage notice */
-        add_action( 'wp_ajax_statically_illegal_cdnurl_notice_dismiss', [ __CLASS__, 'statically_illegal_cdnurl_notice_dismiss' ] );
+            /* ajax for illegal usage notice */
+            add_action( 'wp_ajax_statically_illegal_cdnurl_notice_dismiss', [ __CLASS__, 'statically_illegal_cdnurl_notice_dismiss' ] );
+        } else {
+        /* for custom domain */
+            if ( self::admin_pagenow( 'statically' ) ) {
+                add_action( 'admin_init', [ __CLASS__, 'ajax_analytics' ] );
+                add_action( 'admin_init', [ __CLASS__, 'ajax_purge' ] );
+                add_action( 'admin_init', [ __CLASS__, 'ajax_purge_all' ] );
+            }
+        }
 
-        /* TODO: remove unused options */
-        //delete_option( 'statically-illegal-cdnurl-notice-dismissed' );
+        /* remove unused options */
+        delete_option( 'statically-illegal-cdnurl-notice-dismissed' );
     }
 
     /**
@@ -127,6 +138,8 @@ class Statically
      */
     public static function handle_uninstall_hook() {
         delete_option( 'statically' );
+        delete_option( 'statically-illegal-cdnurl-notice-dismissed' );
+        delete_option( 'statically-illegal-cdnurl-notice-dismissed2' );
     }
 
     /**
@@ -138,7 +151,7 @@ class Statically
         add_option(
             'statically',
             [
-                'url'            => self::get_cdn_url(),
+                'url'            => get_option( 'home' ),
                 'dirs'           => 'wp-content,wp-includes',
                 'excludes'       => '.php',
                 'qs_excludes'    => 'no-statically',
@@ -147,6 +160,8 @@ class Statically
                 'height'         => '0',
                 'smartresize'    => '0',
                 'webp'           => '1',
+                'css'            => '0',
+                'js'             => '0',
                 'emoji'          => '1',
                 'favicon'        => '0',
                 'favicon_shape'  => 'rounded',
@@ -171,6 +186,7 @@ class Statically
                 'dev'            => '0',
                 'replace_cdnjs'  => '0',
                 'statically_api_key' => '',
+                'statically_zone_id' => '',
             ]
         );
     }
@@ -206,7 +222,7 @@ class Statically
                 '<div class="statically-illegal-cdnurl-notice notice notice-warning is-dismissible">
                     <p><i class="dashicons dashicons-warning"></i> %s</p>
                 </div>',
-                __( 'Statically Sites Free CDN URL <code>https://cdn.statically.io/sites/</code> will be deprecated soon. Please re-check your settings and make sure to remove this CDN URL from any plugin settings except the Statically plugin.', 'statically' )
+                __( 'Statically Sites or <code>https://cdn.statically.io/sites/</code> has been deprecated. If you are using this URL in other cache plugin settings like <strong>LiteSpeed Cache</strong> or <strong>WordPress Fastest Cache</strong>, please consider removing it.', 'statically' )
             )
         );
     }
@@ -217,7 +233,7 @@ class Statically
      * @since 0.6.1
      */
     public static function statically_illegal_cdnurl_notice_dismiss() {
-        update_option( 'statically-illegal-cdnurl-notice-dismissed', 1 );
+        update_option( 'statically-illegal-cdnurl-notice-dismissed2', 1 );
     }
 
     /**
@@ -244,7 +260,7 @@ class Statically
         return wp_parse_args(
             get_option( 'statically' ),
             [
-                'url'             => self::get_cdn_url(),
+                'url'             => get_option( 'home' ),
                 'dirs'            => 'wp-content,wp-includes',
                 'excludes'        => '.php',
                 'qs_excludes'     => 'no-statically',
@@ -253,6 +269,8 @@ class Statically
                 'height'          => '0',
                 'smartresize'     => 0,
                 'webp'            => 1,
+                'css'             => 0,
+                'js'              => 0,
                 'emoji'           => 1,
                 'favicon'         => 0,
                 'favicon_shape'   => 'rounded',
@@ -277,6 +295,7 @@ class Statically
                 'dev'             => 0,
                 'replace_cdnjs'   => 0,
                 'statically_api_key'  => '',
+                'statically_zone_id' => '',
             ]
         );
     }
@@ -300,25 +319,13 @@ class Statically
             $options['width'],
             $options['height'],
             $options['webp'],
+            $options['css'],
+            $options['js'],
             $options['relative'],
             $options['https'],
             $options['replace_cdnjs'],
             $options['statically_api_key']
         );
-    }
-    
-    /**
-     * get CDN URL
-     *
-     * @since 0.5.0
-     * 
-     * @return string CDN URL
-     */
-    public static function get_cdn_url() {
-        $base = str_replace( ['http://', 'https://'], '', get_option( 'home' ) );
-
-        $cdn = self::CDN . 'sites/' . $base;
-        return $cdn;
     }
 
     /**
@@ -329,7 +336,7 @@ class Statically
     public static function is_custom_domain() {
         $options = self::get_options();
         $cdn_url = $options['url'];
-        return ! preg_match( '/cdn.statically.io/', $cdn_url );
+        return get_option( 'home' ) !== $cdn_url;
     }
 
     /**
@@ -372,10 +379,10 @@ class Statically
      */
     public static function admin_scripts() {
         // main css
-		wp_enqueue_style( 'statically', plugin_dir_url( STATICALLY_FILE ) . 'static/statically.css', array(), STATICALLY_VERSION );
+        wp_enqueue_style( 'statically', plugin_dir_url( STATICALLY_FILE ) . 'static/statically.css', array( 'wp-jquery-ui-dialog' ), STATICALLY_VERSION );
 
         // main js
-        wp_enqueue_script( 'statically', plugin_dir_url( STATICALLY_FILE ) . 'static/statically.js', array(), STATICALLY_VERSION );
+        wp_enqueue_script( 'statically', plugin_dir_url( STATICALLY_FILE ) . 'static/statically.js', array( 'jquery-form', 'jquery-ui-core', 'jquery-ui-dialog' ), STATICALLY_VERSION );
     }
 
     /**
@@ -386,11 +393,6 @@ class Statically
     public static function handle_rewrite_hook() {
         $options = self::get_options();
         $qs_excludes = array_map( 'trim', explode( ',', $options['qs_excludes'] ) );
-
-        // check if origin equals cdn url
-        if ( $options['url'] === get_option( 'home' ) ) {
-            return;
-        }
 
         // check if Statically API Key is set before start rewriting
         if ( ! array_key_exists( 'statically_api_key', $options )
@@ -422,6 +424,196 @@ class Statically
     public static function rewrite_the_content( $html ) {
         $rewriter = self::get_rewriter();
         return $rewriter->rewrite( $html );
+    }
+
+    /**
+     * analytics
+     * 
+     * @since 0.8
+     */
+    public static function ajax_analytics() {
+        $options = self::get_options();
+
+        if ( isset( $_GET['statically_analytics_data'] ) ) {
+            header( 'Content-Type: application/json' );
+
+            if ( ! array_key_exists( 'statically_api_key', $options )
+                    || strlen( $options['statically_api_key'] ) < 32 ) {
+                $ajax = [
+                    'status' => 'error',
+                    'message' => 'API Key is not valid'
+                ];
+                echo json_encode( $ajax );
+                exit();
+            }
+
+            if ( strlen( $options['statically_zone_id'] ) < 4 ) {
+                $ajax = [
+                    'status' => 'error',
+                    'message' => 'Zone ID is required'
+                ];
+                echo json_encode( $ajax );
+                exit();
+            }
+
+            $response = wp_remote_get(
+                Statically::API . 'stats?zone_id=' . $options['statically_zone_id'],
+                [
+                    'timeout' => 20,
+                    'headers' => [
+                        'Statically-Key' => $options['statically_api_key'],
+                    ]
+                ]
+            );
+    
+            if ( is_wp_error( $response ) ) {
+                $data = [
+                    'status' => 'error',
+                    'message' => 'Error connecting to Statically API - '. $response->get_error_message()
+                ];
+                echo json_encode( $data );
+                exit();
+            }
+
+            header( 'Cache-Control: public, max-age=300' );
+    
+            $json = json_decode( $response['body'], true );
+    
+            $data = [
+                'status' => 'success',
+                'TotalRequests' => number_format( $json['msg']['TotalRequestsServed'] ),
+                'TotalBandwidth' => statically_format_bytes( $json['msg']['TotalBandwidthUsed'] ),
+                'CacheHitRate' => number_format( $json['msg']['CacheHitRate'] ) . '%'
+            ];
+    
+            echo json_encode( $data );
+            exit();
+        }
+    }
+
+    /**
+     * purge (by URL)
+     * 
+     * @since 0.8
+     */
+    public static function ajax_purge() {
+        $options = self::get_options();
+
+        if ( isset( $_POST['purge_submit'] ) && $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+
+            // Check for valid API Key and Zone ID
+            self::api_requirements_check();
+    
+            if ( empty( $_POST['purge_url'] ) ) {
+                echo 'URL required';
+                exit();
+            } else {
+                $urls_to_purge = str_replace( '%0D%0A', ',', urlencode( $_POST['purge_url'] ) );
+                $total_urls = count( explode( ',', urldecode( $urls_to_purge ) ) );
+
+                if ( $total_urls > 10 ) {
+                    echo 'Too many URLs';
+                    exit();
+                }
+
+                $response = wp_remote_get(
+                    Statically::API . 'purge?zone_id=' . $options['statically_zone_id'] . '&url=' . $urls_to_purge,
+                    [
+                        'timeout' => 20,
+                        'headers' => [
+                            'Statically-Key' => $options['statically_api_key'],
+                        ]
+                    ]
+                );
+
+                if ( is_wp_error( $response ) ) {
+                    printf(
+                        '<p>%s</p>',
+                        esc_html__( 'Error connecting to Statically API - '. $response->get_error_message(), 'statically' )
+                    );
+                    exit();
+                }
+
+                //error_log( 'Statically API: ' . $response['body'] );
+                echo $total_urls . ' URL(s) - ';
+
+                $json = json_decode( $response['body'], true );
+                if ( $json['status'] == 'success' ) {
+                    $status = $json['status'] . '<i class="dashicons dashicons-yes"></i>';
+                } else {
+                    $status = $json['status'] . ': ' . $json['message'] . '<i class="dashicons dashicons-no"></i>';
+                }
+                echo $status;
+                exit();
+            }
+        }
+    }
+
+    /**
+     * purge all
+     * 
+     * @since 0.8
+     */
+    public static function ajax_purge_all() {
+        $options = self::get_options();
+ 
+        if( isset( $_POST['purge_all_submit'] ) && $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+
+            // Check for valid API Key and Zone ID
+            self::api_requirements_check();
+    
+            if ( empty( $_POST['purge_all'] ) ) {
+                echo '0';
+                exit();
+            } else {
+                $response = wp_remote_get(
+                    Statically::API . 'purge_all?zone_id=' . $options['statically_zone_id'],
+                    [
+                        'timeout' => 20,
+                        'headers' => [
+                            'Statically-Key' => $options['statically_api_key'],
+                        ]
+                    ]
+                );
+
+                if ( is_wp_error( $response ) ) {
+                    printf(
+                        '<p>%s</p>',
+                        esc_html__( 'Error connecting to Statically API - '. $response->get_error_message(), 'statically' )
+                    );
+                    exit();
+                }
+
+                $json = json_decode($response['body'], true);
+                if ( $json['status'] == 'success' ) {
+                    $status = $json['status'] . '<i class="dashicons dashicons-yes"></i>';
+                } else {
+                    $status = $json['status'] . ': ' . $json['message'] . '<i class="dashicons dashicons-no"></i>';
+                }
+                echo $status;
+                exit();
+            }
+        }
+    }
+
+    /**
+     * API requirements check
+     * 
+     * @since 0.8
+     */
+    public static function api_requirements_check() {
+        $options = self::get_options();
+
+        if ( ! array_key_exists( 'statically_api_key', $options )
+                || strlen( $options['statically_api_key'] ) < 32 ) {
+            echo 'API Key is not valid';
+            exit();
+        }
+
+        if ( strlen( $options['statically_zone_id'] ) < 4 ) {
+            echo 'Zone ID is required';
+            exit();
+        }
     }
 
 }

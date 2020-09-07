@@ -50,7 +50,7 @@ class Statically_SmartImageResize
             $tf = '/' . $tf;
         }
 
-        if ( statically_is_processable_image( $img_url ) ) {
+        if ( statically_is_processible_image( $img_url ) ) {
             $image[0] = $cdn_url . $tf . str_replace( get_option( 'home' ), '', $img_url );
         }
 

@@ -1,7 +1,7 @@
 === Statically - Free CDN for WordPress ===
 
 Contributors: statically, fransallen
-Tags: optimization, minification, cdn, content delivery network
+Tags: image, optimization, minification, processing, cdn
 Requires at least: 4.6
 Requires PHP: 7.2
 Tested up to: 5.5
@@ -9,30 +9,29 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The free CDN for WordPress.
+Use Statically CDN for image processing and optimization, CSS/JS minification, and much more.
 
 == Description ==
 
 Statically is a free and public Content Delivery Network (CDN) for static assets. The service allows you to serve assets from GitHub, GitLab, Bitbucket, and WordPress SVN.
 
-[**Statically**](https://statically.io/)
+[**Statically**](https://statically.io)
 
 #### FEATURES
 
-* Link WordPress Core Assets to load from the Statically CDN.
-* Image Auto-WebP.
-* Adjust image compression level.
-* Use Statically as the main emoji CDN.
-* Generate favicon based on website's name.
-* Enable automatic Open Graph Image service.
-* Enable or disable for HTTPS.
-* Remove query string from assets.
+* CDN for images (including: processing, optimization, and auto-WebP).
+* CDN for CSS and JS (auto minify).
+* CDN for WordPress Core Assets.
+* CDN for WordPress Emoji.
+* Automatically generate a favicon from website's name.
+* Automatically generate OG images to improve visibility on Facebook and Twitter.
+* Replace existing CDNJS URL with Statically.
 
 #### BENEFITS
 
-* Speeds up your site by serving assets from Statically Multi-CDN infrastructure.
+* Speeds up your site by serving assets from Statically CDN.
 * Accelerate the delivery of your image files and add transformation capabilities.
-* Save storage by serving post featured image with Statically OG Image service.
+* Save storage by serving featured images with Statically OG Image service.
 
 #### CONTRIBUTE
 
@@ -54,6 +53,17 @@ Statically is a free and public Content Delivery Network (CDN) for static assets
 3. Access the plugin settings from the "Statically" menu.
 
 == Changelog ==
+
+= 0.8 =
+* Ability to serve JavaScript files on CDN
+* Added Statically Zone ID option for Custom Domain
+* Added Analytics tab (Custom Domain required)
+* Added Caching tab and its Purge Cache feature (Custom Domain required)
+* Added Support Us tab
+* Added Favicons service on Tools tab
+* Display notice when site don't have HTTPS
+* Display notice for Statically Sites CDN deprecation
+* Remove `cdn.statically.io/sites` URL
 
 = 0.7 =
 * Option to replace CDNJS URL with Statically

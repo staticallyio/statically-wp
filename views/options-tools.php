@@ -7,33 +7,38 @@
     </p>
 
     <section class="tools-content">
-        <h3>Brought to you by Statically</h3>
+        <h3><?php _e( 'Brought to you by Statically', 'statically' ); ?></h3>
 
         <div class="tools">
             <a class="tool" href="https://statically.io/screenshot/" target="_blank">
-                <h4>Screenshot</h4>
-                <p class="description">The free & fast website screenshot.</p>
+                <h4><?php _e( 'Screenshot', 'statically' ); ?></h4>
+                <p class="description"><?php _e( 'Fast, programmatic website screenshot.', 'statically' ); ?></p>
             </a>
 
             <a class="tool" href="https://statically.io" target="_blank">
-                <h4>UnRaw</h4>
-                <p class="description">Properly serve and minify GitHub, GitLab, and Bitbucket files.</p>
+                <h4><?php _e( 'UnRaw', 'statically' ); ?></h4>
+                <p class="description"><?php _e( 'CDN and minification for GitHub, GitLab, and Bitbucket files.', 'statically' ); ?></p>
+            </a>
+
+            <a class="tool" href="https://statically.io/favicons/" target="_blank">
+                <h4><?php _e( 'Favicons', 'statically' ); ?></h4>
+                <p class="description"><?php _e( 'Host your favicon file on CDN.', 'statically' ); ?></p>
             </a>
 
             <a class="tool" href="https://statically.io/contact/" target="_blank">
-                <h4>Consultant</h4>
-                <p class="description">Need help enabling a CDN or improving your WordPress?</p>
+                <h4><?php _e( 'Consultant', 'statically' ); ?></h4>
+                <p class="description"><?php _e( 'Need help enabling a CDN or improving your WordPress?', 'statically' ); ?></p>
             </a>
         </div>
     </section>
 
     <section class="tools-content">
-        <h3>For Your WordPress</h3>
+        <h3><?php _e( 'For Your WordPress', 'statically' ); ?></h3>
 
         <div class="tools">
             <a class="tool" href="https://statically.io/go/wp2static" target="_blank">
-                <h4>WP2Static</h4>
-                <p class="description">Open-source static site generator for WordPress.</p>
+                <h4><?php _e( 'WP2Static', 'statically' ); ?></h4>
+                <p class="description"><?php _e( 'Open source static site generator for WordPress.', 'statically' ); ?></p>
             </a>
         </div>
     </section>

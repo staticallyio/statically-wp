@@ -1,20 +1,27 @@
 <?php defined( 'ABSPATH' ) OR exit; ?>
 
 <div data-stly-layout="general">
+    <?php if ( ! statically_use_https() ) { ?>
+        <p><i class="dashicons dashicons-warning" style="color:#ffb900"></i>
+        <?php _e( 'In order for Statically to work, website must have HTTPS enabled.', 'statically' ); ?>
+        </p>
+    <?php } ?>
+
     <h3 class="title"><?php _e( 'General', 'statically' ); ?></h3>
     <table class="form-table">
         <tr valign="top">
             <th scope="row">
-                <?php _e( 'Statically CDN URL', 'statically' ); ?>
+                <?php _e( 'Statically Zone', 'statically' ); ?>
             </th>
             <td>
                 <fieldset>
                     <label for="statically_url">
-                        <input type="text" name="statically[url]" id="statically_url" value="<?php echo $options['url']; ?>" size="64" class="regular-text" required />
+                        <input type="text" name="statically[url]" id="statically_url" value="<?php echo str_replace( 'cdn.statically.io/sites/', '', $options['url'] ); ?>" size="64" class="regular-text" required />
                     </label>
 
                     <p class="description">
-                        <?php _e( 'Enter the CDN URL without trailing slash', 'statically' ); ?>. <?php _e( 'Example:', 'statically' ); ?> <code>https://cdn.statically.io/sites/example.com</code>
+                        <?php _e( 'Enter Zone URL without trailing slash', 'statically' ); ?>. <br>
+                        <?php _e( 'Example:', 'statically' ); ?> <code>https://example.com</code> <?php _e( 'or', 'statically' ); ?> <code>https://cdn.example.com</code> <?php _e( 'if you have a custom domain setup', 'statically' ); ?>.
                     </p>
                 </fieldset>
             </td>
@@ -37,7 +44,48 @@
             </td>
         </tr>
 
-        <tr valign="top" <?php if ( !Statically::is_custom_domain() ) echo 'style="display:none"'; ?>>
+        <tr valign="top" <?php if ( ! Statically::is_custom_domain() ) echo 'style="display:none"'; ?>>
+            <th scope="row">
+                <?php _e( 'Statically Zone ID', 'statically' ); ?>
+            </th>
+            <td>
+                <fieldset>
+                    <label for="statically_zone_id">
+                        <input type="text" name="statically[statically_zone_id]" id="statically_zone_id" value="<?php echo $options['statically_zone_id']; ?>" size="64" class="regular-text" />
+                    </label>
+                </fieldset>
+            </td>
+        </tr>
+
+        <tr valign="top" <?php if ( Statically::is_custom_domain() ) echo 'style="display:none"'; ?>>
+            <th scope="row">
+                <?php _e( 'CSS', 'statically' ); ?>
+            </th>
+            <td>
+                <fieldset>
+                    <label for="statically_css">
+                        <input type="checkbox" name="statically[css]" id="statically_css" value="1" <?php checked(1, $options['css']) ?> disabled />
+                        <?php _e( 'Statically rely on donations, <a data-stly-tab="support-us" href="#support-us">donate</a> to make it happen!', 'statically' ); ?>
+                    </label>
+                </fieldset>
+            </td>
+        </tr>
+
+        <tr valign="top" <?php if ( Statically::is_custom_domain() ) echo 'style="display:none"'; ?>>
+            <th scope="row">
+                <?php _e( 'JavaScript', 'statically' ); ?>
+            </th>
+            <td>
+                <fieldset>
+                    <label for="statically_js">
+                        <input type="checkbox" name="statically[js]" id="statically_js" value="1" <?php checked(1, $options['js']) ?> />
+                        <?php _e( 'Serve and automatically minify JavaScript files with CDN (wp-content folder only). Default: <code>OFF</code>', 'statically' ); ?>
+                    </label>
+                </fieldset>
+            </td>
+        </tr>
+
+        <tr valign="top" <?php if ( ! Statically::is_custom_domain() ) echo 'style="display:none"'; ?>>
             <th scope="row">
                 <?php _e( 'Asset Inclusions', 'statically' ); ?>
             </th>
@@ -55,7 +103,7 @@
             </td>
         </tr>
 
-        <tr valign="top" <?php if ( !Statically::is_custom_domain() ) echo 'style="display:none"'; ?>>
+        <tr valign="top" <?php if ( ! Statically::is_custom_domain() ) echo 'style="display:none"'; ?>>
             <th scope="row">
                 <?php _e( 'Asset Exclusions', 'statically' ); ?>
             </th>

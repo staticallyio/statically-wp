@@ -23,11 +23,11 @@
         <p><?php _e( 'and', 'statically' ); ?></p>
         <span class="twitter">
             <span class="mobile-block">
-                <?php _e( 'Share with your friends so that their website is as fast as yours!', 'statically' ); ?>
+                <?php _e( 'Share with your friends so their website is as fast as yours!', 'statically' ); ?>
             </span>
             <a
                 class="tweet"
-                href="https://twitter.com/intent/tweet?hashtags=statically&amp;related=statically&amp;url=https://statically.io&amp;text=<?php _e( urlencode(  'The all-in-one solution for your website static asset optimization and CDN, try @staticallyio now!' ), 'statically' ); ?>"
+                href="https://twitter.com/intent/tweet?hashtags=statically&amp;related=statically&amp;url=https://statically.io&amp;text=<?php _e(  'The all-in-one solution for your website static asset optimization and CDN, try @staticallyio now!', 'statically' ); ?>"
                 target="_blank"
             >
                 <i class="fab fa-twitter"></i> <?php _e ( 'Tweet', 'statically' ); ?>
@@ -35,7 +35,7 @@
         </span>
 
         <p class="project-by">
-            <?php _e( 'A project by', 'statically' ); ?> <a href="https://upset.dev" target="_blank"> upset.dev</a>
+            A project by <a href="https://upset.dev" target="_blank"> upset.dev</a> &bull; Thank you for your time
         </p>
     </div>
 </footer>
