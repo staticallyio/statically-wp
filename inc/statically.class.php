@@ -222,7 +222,7 @@ class Statically
                 '<div class="statically-illegal-cdnurl-notice notice notice-warning is-dismissible">
                     <p><i class="dashicons dashicons-warning"></i> %s</p>
                 </div>',
-                __( 'Statically Sites or <code>https://cdn.statically.io/sites/</code> has been deprecated. If you are using this URL in other cache plugin settings like <strong>LiteSpeed Cache</strong> or <strong>WordPress Fastest Cache</strong>, please consider removing it.', 'statically' )
+                __( 'Statically Sites or <code>https://cdn.statically.io/sites/</code> has been deprecated. If you are using this URL in other cache plugin settings like <strong>LiteSpeed Cache</strong> or <strong>WP Fastest Cache</strong>, please consider removing it.', 'statically' )
             )
         );
     }
