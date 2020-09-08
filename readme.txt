@@ -56,6 +56,7 @@ Statically is a free and public Content Delivery Network (CDN) for static assets
 
 = 0.8.1 =
 * Fix custom domain detection
+* Added description for Auto-WebP option
 
 = 0.8 =
 * Ability to serve JavaScript files on CDN
