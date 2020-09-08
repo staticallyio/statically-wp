@@ -335,7 +335,7 @@ class Statically
      */
     public static function is_custom_domain() {
         $options = self::get_options();
-        $cdn_url = $options['url'];
+        $cdn_url = str_replace( 'cdn.statically.io/sites/', '', $options['url'] );;
         return get_option( 'home' ) !== $cdn_url;
     }
 

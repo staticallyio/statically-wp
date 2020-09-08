@@ -46,7 +46,7 @@ class Statically_Rewriter
         $statically_api_key
     ) {
         $this->blog_url       = $blog_url;
-        $this->cdn_url        = $cdn_url;
+        $this->cdn_url        = str_replace( 'cdn.statically.io/sites/', '', $cdn_url );
         $this->dirs           = $dirs;
         $this->excludes       = $excludes;
         $this->quality        = $quality;
