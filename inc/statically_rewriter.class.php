@@ -117,17 +117,23 @@ class Statically_Rewriter
             return $asset[0];
         }
 
+        $blog_url = $this->relative_url( $this->blog_url );
+        $blog_path_regex = str_replace( '/', '\/', $this->blog_path );
+        $subst_urls = [ 'http:'.$blog_url ];
+
         // Set default CDN URL: https://cdn.statically.io/sites/example.com
         // before doing any rewrites
-        $cdn_url = Statically::CDN . 'sites/' . parse_url( $this->cdn_url, PHP_URL_HOST );
+        if ( preg_match( "/$blog_path_regex/i", $blog_url ) ) {
+            // support for subdir
+            $cdn_url = Statically::CDN . 'sites/' . parse_url( $this->cdn_url, PHP_URL_HOST ) . $this->blog_path;
+        } else {
+            $cdn_url = Statically::CDN . 'sites/' . parse_url( $this->cdn_url, PHP_URL_HOST );
+        }
 
         // Use user specified domain
         if ( Statically::is_custom_domain() ) {
             $cdn_url = $this->cdn_url;
         }
-
-        $blog_url = $this->relative_url( $this->blog_url );
-        $subst_urls = [ 'http:'.$blog_url ];
 
         // rewrite both http and https URLs if we ticked 'enable CDN for HTTPS connections'
         if ( $this->https ) {
@@ -162,13 +168,12 @@ class Statically_Rewriter
 
         // check if it is an image
         if ( preg_match( '/\.(bmp|gif|jpe?g|png|webp)/i', $asset[0] ) ) {
-            $this->blog_path_regex = str_replace( '/', '\/', $this->blog_path );
-
             // check options and apply transformations
-            if ( ! preg_match( "/$this->blog_path_regex/i", $blog_url ) ) {
-                $asset[0] = str_replace( $blog_url, $blog_url . $this->image_tranformations(), $asset[0] );
-            } else {
+            if ( preg_match( "/$blog_path_regex/i", $blog_url ) ) {
+                // support for subdir
                 $asset[0] = str_replace( $blog_url, $blog_url . $this->image_tranformations() . $this->blog_path, $asset[0] );
+            } else {
+                $asset[0] = str_replace( $blog_url, $blog_url . $this->image_tranformations(), $asset[0] );
             }
 
             // relative URL
