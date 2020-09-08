@@ -54,6 +54,9 @@ Statically is a free and public Content Delivery Network (CDN) for static assets
 
 == Changelog ==
 
+= 0.8.1 =
+* Fix custom domain detection
+
 = 0.8 =
 * Ability to serve JavaScript files on CDN
 * Added Statically Zone ID option for Custom Domain
