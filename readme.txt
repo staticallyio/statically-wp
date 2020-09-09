@@ -1,7 +1,8 @@
 === Statically - Free CDN for WordPress ===
 
 Contributors: statically, fransallen
-Tags: image, optimization, minification, processing, cdn
+Donate link: https://www.patreon.com/fransallen
+Tags: images, optimization, minification, processing, cdn
 Requires at least: 4.6
 Requires PHP: 7.2
 Tested up to: 5.5
