@@ -55,7 +55,8 @@
 
         <tr valign="top">
             <th scope="row">
-                <?php _e( 'Open Graph Image', 'statically' ); ?>
+                <?php _e( 'Open Graph Image', 'statically' ); ?><br>
+                <small>(<?php _e( 'Text to Image', 'statically' ); ?>)</small>
             </th>
             <td>
                 <fieldset>
@@ -65,7 +66,7 @@
                     </label>
 
                     <p class="description">
-                        <?php _e( 'When there is no Featured Image set, create an image from the page title with the Statically OG Image service and use it as your site&#39;s metadata. Useful for improving visibility on Facebook and Twitter. Learn more about <a href="https://ogp.me" target="_blank">The Open Graph protocol</a>.', 'statically' ); ?>
+                        <?php _e( 'Turns page title into an image with the Statically OG Image service and use it as your site&#39;s metadata. Useful to improve visibility on Facebook and Twitter. Check this <a href="https://cdn.statically.io/og/Hello%20World.jpg" target="_blank">example</a>. Learn more about <a href="https://ogp.me" target="_blank">The Open Graph protocol</a>.', 'statically' ); ?>
                     </p>
 
                     <label for="statically_og-theme">
