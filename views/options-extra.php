@@ -19,7 +19,8 @@
 
         <tr valign="top">
             <th scope="row">
-                <?php _e( 'Favicon', 'statically' ); ?>
+                <?php _e( 'Favicon', 'statically' ); ?><br>
+                <small>(<?php _e( 'Text to Image', 'statically' ); ?>)</small>
             </th>
             <td>
                 <fieldset>
@@ -29,7 +30,8 @@
                     </label>
 
                     <p class="description">
-                        <?php _e( 'This feature allows you to generate a personalized image based on the name of your website using the Statically Favicons service and then use it as your website&#39;s favicon. Only use this feature if you haven&#39;t set one.', 'statically' ); ?>
+                        <?php _e( 'This feature allows you to generate a personalized image based on the name of your website using the Statically Favicons service and then use it as your website&#39;s favicon. Use this feature if you haven&#39;t set one.', 'statically' ); ?>
+                        <?php _e( 'See <a href="https://cdn.statically.io/favicons/g/Statically.png" target="_blank">example</a>.', 'statically' ); ?>
                     </p>
 
                     <label for="statically_favicon-shape">
