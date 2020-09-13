@@ -92,7 +92,10 @@
 
                     <?php if ( ! Statically::is_custom_domain() ) : ?>
                         <p class="description">
-                            <?php _e( 'Feature: WebP will only be delivered when it is smaller than the original image (only available over Cloudflare).', 'statically' ); ?>
+                            <?php _e( 'A feature: Statically will send a WebP when image is smaller than the original (currently available over Cloudflare only)', 'statically' ); ?>.
+                            <?php echo sprintf(
+                                '<a href="https://statically.discourse.group/t/82" target="_blank">%s</a>',
+                                __( 'Learn more', 'statically' ) ); ?>
                         </p>
                     <?php endif; ?>
                 </fieldset>
