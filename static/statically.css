@@ -92,6 +92,17 @@ body.admin_page_statically-debugger #wpcontent {
 .stly pre.debugger strong {
   text-transform: uppercase;
 }
+.stly span.new {
+  position: absolute;
+  font-size: 10px;
+  color: #ff2020;
+  margin-top: -16px;
+  margin-left: -12px;
+}
+.stly-tab li a span.new {
+  margin-top: -16px;
+  margin-left: -18px;
+}
 
 /** Buttons */
 .stly .button, .stly-dialog .button {
@@ -253,13 +264,6 @@ body.admin_page_statically-debugger #wpcontent {
 .stly-tab li a.active {
   border-bottom: 4px solid #23282d;
 }
-.stly-tab li a .new {
-  position: absolute;
-  font-size: 10px;
-  color: #ff2020;
-  margin-top: -16px;
-  margin-left: -18px;
-}
 
 /* Tools */
 .tools-content {
@@ -391,7 +395,7 @@ body.admin_page_statically-debugger #wpcontent {
   .stly-tab li:last-child a {
     margin-right: 2.5rem;
   }
-  .stly-tab li a .new {
+  .stly-tab li a span.new {
     display: none;
   }
   .stly input[type="color"] {

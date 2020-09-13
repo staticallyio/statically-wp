@@ -74,6 +74,7 @@
         <tr valign="top" <?php if ( Statically::is_custom_domain() ) echo 'style="display:none"'; ?>>
             <th scope="row">
                 <?php _e( 'JavaScript', 'statically' ); ?>
+                <span class="new"><?php _e( 'New', 'statically' ); ?></span>
             </th>
             <td>
                 <fieldset>
