@@ -87,12 +87,12 @@
                 <fieldset>
                     <label for="statically_webp">
                         <input type="checkbox" name="statically[webp]" id="statically_webp" value="1" <?php checked(1, $options['webp']) ?> />
-                        <?php _e( 'Convert images to WebP format if browser supports it. Default: <code>ON</code>', 'statically' ); ?>
+                        <?php _e( 'Automatically convert images into WebP format. Default: <code>ON</code>', 'statically' ); ?>
                     </label>
 
                     <?php if ( ! Statically::is_custom_domain() ) : ?>
                         <p class="description">
-                            <?php _e( 'WebP will only be delivered when it is smaller than the original image (only when Statically CDN is Cloudflare).', 'statically' ); ?>
+                            <?php _e( 'Feature: WebP will only be delivered when it is smaller than the original image (only available over Cloudflare).', 'statically' ); ?>
                         </p>
                     <?php endif; ?>
                 </fieldset>

@@ -68,7 +68,7 @@
                     </label>
 
                     <p class="description">
-                        <?php _e( 'Turns page title into an image with the Statically OG Image service and use it as your site&#39;s metadata. Useful to improve visibility on Facebook and Twitter. Check this <a href="https://cdn.statically.io/og/Hello%20World.jpg" target="_blank">example</a>. Learn more about <a href="https://ogp.me" target="_blank">The Open Graph protocol</a>.', 'statically' ); ?>
+                        <?php _e( 'Turn your post titles into images with the Statically OG Image service and use it as your site&#39;s metadata. Useful to improve visibility on Facebook and Twitter. Check this <a href="https://cdn.statically.io/og/Hello%20World.jpg" target="_blank">example</a>. Learn more about <a href="https://ogp.me" target="_blank">The Open Graph protocol</a>.', 'statically' ); ?>
                     </p>
 
                     <label for="statically_og-theme">
