@@ -334,7 +334,7 @@ body.admin_page_statically-debugger #wpcontent {
 }
 
 /* Support Us */
-.stly .support-us {
+.stly .support-me {
   margin: auto;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
@@ -342,25 +342,21 @@ body.admin_page_statically-debugger #wpcontent {
   text-align: center;
 }
 
-.stly .support-us+.support-us {
+.stly .support-me+.support-me {
   margin-top: 5em;
 }
 
-.stly .support-us .logo {
+.stly .support-me .logo {
   width: 125px;
 }
 
-.stly .support-us .title {
+.stly .support-me .title {
   margin-bottom: .5em;
   line-height: 1.2;
 }
 
-.stly .support-us .description {
+.stly .support-me .description {
   margin-bottom: 2em;
-}
-
-.stly .support-us .cds {
-  width: 300px;
 }
 
 @media screen and (max-width: 600px) {

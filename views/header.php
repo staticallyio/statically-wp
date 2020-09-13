@@ -55,8 +55,8 @@ $statically_logo_url = plugin_dir_url( STATICALLY_FILE ) . 'static/statically.sv
         <li><a data-stly-tab="labs" href="#labs"><?php _e( 'Labs', 'statically' ); ?></a></li>
         <li><a data-stly-tab="tools" href="#tools"><?php _e( 'Tools ', 'statically' ); ?></a></li>
         <li>
-            <a data-stly-tab="support-us" href="#support-us">
-                <?php _e( 'Support Us!', 'statically' ); ?>
+            <a data-stly-tab="support-me" href="#support-me">
+                <?php _e( 'Support me!', 'statically' ); ?>
                 <span class="new"><?php _e( 'New', 'statically' ); ?></span>
             </a>
         </li>

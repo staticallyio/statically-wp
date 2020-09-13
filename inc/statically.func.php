@@ -43,4 +43,4 @@ function statically_format_bytes( $bytes, $precision = 2 ) {
 	$bytes /= pow( 1024, $pow );
 
 	return round( $bytes, $precision ) . ' ' . $units[$pow];
-} 
+}
