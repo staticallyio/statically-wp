@@ -65,7 +65,7 @@
                 <fieldset>
                     <label for="statically_css">
                         <input type="checkbox" name="statically[css]" id="statically_css" value="1" <?php checked(1, $options['css']) ?> disabled />
-                        <?php _e( 'Statically rely on donations, <a data-stly-tab="support-us" href="#support-me">donate</a> to make it happen!', 'statically' ); ?>
+                        <?php _e( 'Statically rely on donations, <a data-stly-tab="support-me" href="#support-me">donate</a> to make it happen!', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>
