@@ -203,7 +203,7 @@ class Statically
                 sprintf(
                     '<div class="error"><p>%s</p></div>',
                     sprintf(
-                        __( "Statically is optimized for WordPress %s. Please disable the plugin or upgrade your WordPress installation (recommended).", "statically" ),
+                        __( 'Statically is optimized for WordPress %s. Please disable the plugin or upgrade your WordPress installation (recommended).', 'statically' ),
                         STATICALLY_MIN_WP
                     )
                 )

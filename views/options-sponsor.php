@@ -4,7 +4,7 @@
     <section class="support-me">
         <img class="logo" src="<?php echo plugin_dir_url( STATICALLY_FILE ) . 'static/statically-mark.svg'; ?>" alt="Statically logo">
         <h3 class="title">
-          <?php _e( 'List your name on Statically repository!', 'statically' ); ?>
+          <?php _e( 'Get your name put in the Statically repository!', 'statically' ); ?>
         </h3>
         <p class="description">
           <?php _e( 'Who is "me"? Hi, I\'m Frans Allen, do you love this project? Did this project help you in any way? Show love by monthly donation on Patreon, even a small amount will help me cover development and server expenses.', 'statically' ); ?>
