@@ -7,7 +7,7 @@
           <?php _e( 'List your name on Statically repository!', 'statically' ); ?>
         </h3>
         <p class="description">
-          <?php _e( 'Love this project? Did this project help you in any way? Show love by monthly donation on Patreon, even a small amount will help me cover development and server expenses.', 'statically' ); ?>
+          <?php _e( 'Who is "me"? Hi, I\'m Frans Allen, do you love this project? Did this project help you in any way? Show love by monthly donation on Patreon, even a small amount will help me cover development and server expenses.', 'statically' ); ?>
         </p>
         <a class="button button-primary" href="https://www.patreon.com/fransallen" target="_blank">
           <?php _e( 'Become A Patron', 'statically' ); ?>
