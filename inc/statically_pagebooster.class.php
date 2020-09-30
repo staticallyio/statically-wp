@@ -4,7 +4,7 @@ class Statically_PageBooster
 {
     public static function add_js() {
         $options = Statically::get_options();
-        $f3h_version = '1.0.6';
+        $f3h_version = '1.0.12';
 
         if ( 1 !== $options['pagebooster_custom_js_enabled'] ) {
             if ( !empty( $options['pagebooster_content'] ) ) {
