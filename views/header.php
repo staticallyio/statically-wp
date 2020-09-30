@@ -9,14 +9,14 @@ $statically_logo_url = plugin_dir_url( STATICALLY_FILE ) . 'static/statically.sv
 <header class="stly-header-container">
     <div class="stly-header">
         <div class="logo">
-            <a href="https://statically.io/" target="_blank" title="<?php _e( 'Optimization for your website static assets.', 'statically' ); ?>">
+            <a href="https://statically.io" target="_blank" title="<?php _e( 'Optimization for your website static assets.', 'statically' ); ?>">
                 <img src="<?php echo $statically_logo_url; ?>" />
             </a>
         </div>
 
         <nav>
             <ul>
-                <li><a href="https://statically.discourse.group/" target="_blank"><?php _e( 'Ask the Community', 'statically' ); ?></a></li>
+                <li><a href="https://statically.discourse.group" target="_blank"><?php _e( 'Ask the Community', 'statically' ); ?></a></li>
                 <li><a href="https://twitter.com/intent/follow?screen_name=staticallyio" target="_blank" title="<?php _e( 'Follow @staticallyio on Twitter', 'statically' ); ?>"><i class="fab fa-twitter"></i></a></li>
                 <li><a href="https://github.com/staticallyio" target="_blank" title="<?php _e( 'This plugin is open source software', 'statically' ); ?>"><i class="fab fa-github"></i></a></li>
             </ul>

@@ -5,7 +5,7 @@
         <em>&#8212; <?php _e( 'In mission to make static files easy to manage and fast to deliver.', 'statically' ); ?> &#8212;</em>
     </div>
 
-    <a href="https://statically.io/" target="_blank"><?php _e( 'About', 'statically'); ?></a>
+    <a href="https://statically.io" target="_blank"><?php _e( 'About', 'statically'); ?></a>
     <a href="https://wordpress.org/plugins/statically/#description-header" target="_blank"><?php _e( 'Features', 'statically'); ?></a>
     <a href="<?php echo admin_url( 'admin.php?page=statically-debugger' ); ?>"><?php _e( 'Debug', 'statically'); ?></a>
 
