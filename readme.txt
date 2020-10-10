@@ -1,4 +1,4 @@
-=== Statically - Free CDN for WordPress ===
+=== Statically - Optimization & CDN ===
 
 Contributors: statically, fransallen
 Donate link: https://www.patreon.com/fransallen
@@ -14,25 +14,26 @@ Use Statically CDN for image processing and optimization, CSS/JS minification, a
 
 == Description ==
 
-Statically is a free and public Content Delivery Network (CDN) for static assets. The service allows you to serve assets from GitHub, GitLab, Bitbucket, and WordPress SVN.
+Statically is the all-in-one solution for your static assets optimization and delivery. The multi-CDN feature makes Statically faster and more reliable than other solutions with 300+ points of presence worldwide.
 
 [**Statically**](https://statically.io)
 
 #### FEATURES
 
-* CDN for images (including: processing, optimization, and auto-WebP).
-* CDN for CSS and JS (auto minify).
-* CDN for WordPress Core Assets.
-* CDN for WordPress Emoji.
-* Automatically generate a favicon from website's name.
-* Automatically generate OG images to improve visibility on Facebook and Twitter.
-* Replace existing CDNJS URL with Statically.
+* Multi-CDN (Fastly, Cloudflare, BunnyCDN)
+* Image Optimization
+* CDN for CSS and JavaScript files
+* CDN for WordPress Core Assets
+* CDN for WordPress Emoji
+* Automagically create beautiful Open Graph images
+* Easily generate a beautiful favicon for your site
+* Replace existing CDNJS URL with Statically
 
 #### BENEFITS
 
-* Speeds up your site by serving assets from Statically CDN.
-* Accelerate the delivery of your image files and add transformation capabilities.
-* Save storage by serving featured images with Statically OG Image service.
+* Automatically speed up your site by optimizing static assets
+* The most reliable network in its class for your static assets
+* Lighten your server from static asset traffic loads
 
 #### CONTRIBUTE
 
