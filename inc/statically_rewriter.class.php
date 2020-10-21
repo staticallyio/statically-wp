@@ -17,6 +17,7 @@ class Statically_Rewriter
     var $width          = null;     // set image width
     var $height         = null;     // set image height
     var $webp           = false;    // enable WebP
+    var $img            = true;     // CDNize image files
     var $css            = false;    // CDNize CSS files
     var $js             = false;    // CDNize JS files
     var $relative       = false;    // use CDN on relative paths
@@ -38,6 +39,7 @@ class Statically_Rewriter
         $width,
         $height,
         $webp,
+        $img,
         $css,
         $js,
         $relative,
@@ -53,6 +55,7 @@ class Statically_Rewriter
         $this->width          = $width;
         $this->height         = $height;
         $this->webp           = $webp;
+        $this->img            = $img;
         $this->css            = $css;
         $this->js             = $js;
         $this->relative       = $relative;
@@ -187,6 +190,11 @@ class Statically_Rewriter
             // if user use a custom domain
             if ( Statically::is_custom_domain() && ( $this->quality || $this->width || $this->height || $this->webp ) ) {
                 $cdn_url = $this->cdn_url . '/statically/img';
+            }
+
+            // option to disable image CDN
+            if ( empty( $this->img ) && ! Statically::is_custom_domain() ) {
+                return $asset[0];
             }
         }
 

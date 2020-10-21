@@ -44,6 +44,7 @@ class Statically_Settings
             'height'          => (int)( $data['height'] ),
             'smartresize'     => (int)( $data['smartresize'] ),
             'webp'            => (int)( $data['webp'] ),
+            'img'             => (int)( $data['img'] ),
             'css'             => (int)( $data['css'] ),
             'js'              => (int)( $data['js'] ),
             'emoji'           => (int)( $data['emoji'] ),

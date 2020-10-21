@@ -56,6 +56,9 @@ Statically is the all-in-one solution for your static assets optimization and de
 
 == Changelog ==
 
+= 0.9 =
+* Added option to enable/disable image CDN
+
 = 0.8.2 =
 * Update some UI components
 
