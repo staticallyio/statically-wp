@@ -370,7 +370,7 @@ body.admin_page_statically-debugger #wpcontent {
 }
 
 .stly .support-me .button {
-  margin: 0 5px;
+  margin: 5px;
 }
 
 @media screen and (max-width: 600px) {
