@@ -16,7 +16,7 @@
             </a>
 
             <a class="tool" href="https://statically.io" target="_blank">
-                <h4><?php _e( 'UnRaw', 'statically' ); ?></h4>
+                <h4><?php _e( 'Staticzap', 'statically' ); ?></h4>
                 <p class="description"><?php _e( 'CDN and minification for GitHub, GitLab, and Bitbucket files.', 'statically' ); ?></p>
             </a>
 
