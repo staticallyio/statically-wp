@@ -121,8 +121,14 @@ body.admin_page_statically-debugger #wpcontent {
 }
 .stly .button-primary:hover, .stly .button-primary:focus,
 .stly-dialog .button-primary:hover, .stly-dialog .button-primary:focus {
-  opacity: .95;
   box-shadow: 0 0 0 3px rgb(255, 187, 187);
+}
+.stly .button-secondary {
+  background: #000!important;
+  color: #fff!important;
+}
+.stly .button-secondary:hover, .stly .button-secondary:focus {
+  box-shadow: 0 0 0 3px rgb(190, 190, 190);
 }
 
 /** Header */
@@ -351,7 +357,7 @@ body.admin_page_statically-debugger #wpcontent {
 }
 
 .stly .support-me .logo {
-  width: 125px;
+  width: 96px;
 }
 
 .stly .support-me .title {
@@ -361,6 +367,10 @@ body.admin_page_statically-debugger #wpcontent {
 
 .stly .support-me .description {
   margin-bottom: 2em;
+}
+
+.stly .support-me .button {
+  margin: 0 5px;
 }
 
 @media screen and (max-width: 600px) {

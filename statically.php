@@ -3,7 +3,7 @@
  * Plugin Name: Statically
  * Plugin URI:  https://statically.io/wordpress/
  * Description: Use Statically CDN for image processing and optimization, CSS/JS minification, and much more.
- * Version:     0.8.2
+ * Version:     0.9
  * Author:      Statically
  * Author URI:  https://statically.io
  * License:     GPLv2 or later
@@ -14,7 +14,7 @@
 defined( 'ABSPATH' ) OR exit;
 
 /* constants */
-define( 'STATICALLY_VERSION', '0.8.2' );
+define( 'STATICALLY_VERSION', '0.9' );
 define( 'STATICALLY_FILE', __FILE__ );
 define( 'STATICALLY_DIR', dirname( __FILE__ ) );
 define( 'STATICALLY_BASE', plugin_basename( __FILE__ ) );
