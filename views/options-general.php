@@ -60,12 +60,13 @@
         <tr valign="top" <?php if ( Statically::is_custom_domain() ) echo 'style="display:none"'; ?>>
             <th scope="row">
                 <?php _e( 'Images', 'statically' ); ?>
+                <span class="new"><?php _e( 'New', 'statically' ); ?></span>
             </th>
             <td>
                 <fieldset>
                     <label for="statically_img">
                         <input type="checkbox" name="statically[img]" id="statically_img" value="1" <?php checked(1, $options['img']) ?> />
-                        <?php _e( 'Optimize image files with CDN (wp-content folder only). Default: <code>OFF</code>', 'statically' ); ?>
+                        <?php _e( 'Optimize image files with CDN (wp-content folder only). Default: <code>ON</code>', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>
