@@ -171,6 +171,11 @@ class Statically_Rewriter
 
         // check if it is an image
         if ( preg_match( '/\.(bmp|gif|jpe?g|png|webp)/i', $asset[0] ) ) {
+            // option to disable image CDN
+            if ( empty( $this->img ) && ! Statically::is_custom_domain() ) {
+                return $asset[0];
+            }
+
             // check options and apply transformations
             if ( preg_match( "/$blog_path_regex/i", $blog_url ) ) {
                 // support for subdir
@@ -190,11 +195,6 @@ class Statically_Rewriter
             // if user use a custom domain
             if ( Statically::is_custom_domain() && ( $this->quality || $this->width || $this->height || $this->webp ) ) {
                 $cdn_url = $this->cdn_url . '/statically/img';
-            }
-
-            // option to disable image CDN
-            if ( empty( $this->img ) && ! Statically::is_custom_domain() ) {
-                return $asset[0];
             }
         }
 
