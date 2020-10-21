@@ -10,19 +10,19 @@
         <h3><?php _e( 'Brought to you by Statically', 'statically' ); ?></h3>
 
         <div class="tools">
-            <a class="tool" href="https://statically.io/screenshot/" target="_blank">
+            <a class="tool" href="https://statically.io/docs/using-screenshot/" target="_blank">
                 <h4><?php _e( 'Screenshot', 'statically' ); ?></h4>
                 <p class="description"><?php _e( 'Fast, programmatic website screenshot.', 'statically' ); ?></p>
             </a>
 
-            <a class="tool" href="https://statically.io" target="_blank">
+            <a class="tool" href="https://statically.io/docs/using-staticzap/" target="_blank">
                 <h4><?php _e( 'Staticzap', 'statically' ); ?></h4>
                 <p class="description"><?php _e( 'CDN and minification for GitHub, GitLab, and Bitbucket files.', 'statically' ); ?></p>
             </a>
 
-            <a class="tool" href="https://statically.io/favicons/" target="_blank">
-                <h4><?php _e( 'Favicons', 'statically' ); ?></h4>
-                <p class="description"><?php _e( 'Host your favicon file on CDN.', 'statically' ); ?></p>
+            <a class="tool" href="https://statically.io/docs/using-avatar/" target="_blank">
+                <h4><?php _e( 'Avatar', 'statically' ); ?></h4>
+                <p class="description"><?php _e( 'Easily generate beautiful avatar images.', 'statically' ); ?></p>
             </a>
 
             <a class="tool" href="https://statically.io/contact/" target="_blank">
