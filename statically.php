@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Statically
  * Plugin URI:  https://statically.io/wordpress/
- * Description: Use Statically CDN for image processing and optimization, CSS/JS minification, and much more.
+ * Description: The best free and fast CDN for WP. Image, CSS, JS optimization. Runs on multi-CDN: Cloudflare, Fastly, BunnyCDN, and CloudFront (coming soon).
  * Version:     0.9
  * Author:      Statically
  * Author URI:  https://statically.io
