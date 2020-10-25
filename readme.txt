@@ -10,7 +10,7 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The best free and fast CDN for WP. Image, CSS, JS optimization. Runs on multi-CDN: Cloudflare, Fastly, BunnyCDN, and CloudFront (coming soon).
+The best free and fast CDN for WP. Image, CSS, JS optimization. Powered by multi-CDN: Cloudflare, Fastly, BunnyCDN, and CloudFront (coming soon).
 
 == Description ==
 
