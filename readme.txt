@@ -14,7 +14,7 @@ The best free and fast CDN for WP. Image, CSS, JS optimization. Powered by multi
 
 == Description ==
 
-Statically is the all-in-one solution for your static assets optimization and delivery. The multi-CDN feature makes Statically faster and more reliable than other solutions with 610+ points of presence worldwide.
+Statically is the all-in-one solution for your static assets optimization and delivery. The multi-CDN feature makes Statically faster and more reliable than other solutions with 700+ points of presence worldwide.
 
 [**Statically**](https://statically.io)
 
