@@ -2,7 +2,7 @@
 
 Contributors: statically, fransallen
 Donate link: https://www.patreon.com/fransallen
-Tags: images, optimization, minification, processing, cdn
+Tags: images, optimization, minification, processing, cdn, google cloud, cloudfront, cloudflare
 Requires at least: 4.6
 Requires PHP: 7.2
 Tested up to: 5.5
