@@ -5,7 +5,7 @@ Donate link: https://www.patreon.com/fransallen
 Tags: images, optimization, minification, processing, cdn, google cloud, cloudfront, cloudflare
 Requires at least: 4.6
 Requires PHP: 7.2
-Tested up to: 5.5
+Tested up to: 5.6
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -55,6 +55,9 @@ Statically is the all-in-one solution for your static assets optimization and de
 3. Access the plugin settings from the "Statically" menu.
 
 == Changelog ==
+
+= 0.9.1 =
+* Security fixes
 
 = 0.9 =
 * Added option to enable/disable image CDN
