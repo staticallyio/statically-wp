@@ -400,7 +400,6 @@ class Statically
         $options = self::get_options();
 
         if ( isset( $_GET['statically_analytics_data'] ) ) {
-            header( 'Content-Type: application/json' );
 
             if ( ! array_key_exists( 'statically_api_key', $options )
                     || strlen( $options['statically_api_key'] ) < 32 ) {
@@ -439,8 +438,6 @@ class Statically
                 echo json_encode( $data );
                 exit();
             }
-
-            header( 'Cache-Control: public, max-age=300' );
     
             $json = json_decode( $response['body'], true );
     
