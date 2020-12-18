@@ -270,6 +270,9 @@ body.admin_page_statically-debugger #wpcontent {
 .stly-tab li a.active {
   border-bottom: 4px solid #23282d;
 }
+.stly-tab li a.support-me {
+  color: #e53e3e;
+}
 
 /* Tools */
 .tools-content {
