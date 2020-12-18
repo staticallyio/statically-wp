@@ -20,7 +20,7 @@ Statically is the all-in-one solution for your static assets optimization and de
 
 #### FEATURES
 
-* Multi-CDN (Google Cloud, CloudFront, Cloudflare, Fastly, and BunnyCDN)
+* Multi-CDN (Cloudflare, Fastly, BunnyCDN, Google Cloud, and CloudFront)
 * Image Optimization
 * CDN for CSS and JavaScript files
 * CDN for WordPress Core Assets
@@ -55,6 +55,11 @@ Statically is the all-in-one solution for your static assets optimization and de
 3. Access the plugin settings from the "Statically" menu.
 
 == Changelog ==
+
+= 1.0 =
+* Fixes
+* Removed Debug admin page
+* Updated admin notice
 
 = 0.9.1 =
 * Security fixes
