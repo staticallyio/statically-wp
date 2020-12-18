@@ -75,19 +75,8 @@ class Statically
         /* admin notices */
         add_action( 'all_admin_notices', [ __CLASS__, 'statically_requirements_check' ] );
 
-        /* for non-custom domain */
-        if ( ! self::is_custom_domain() ) {
-            if ( ! self::admin_pagenow( 'statically' ) ) {
-                /* add admin notice */
-                if( empty( get_option( 'statically-illegal-cdnurl-notice-dismissed3' ) ) ) {
-                    add_action( 'admin_notices', [ __CLASS__, 'statically_admin_notice' ] );
-                }
-            
-                /* ajax for admin notice */
-                add_action( 'wp_ajax_statically_admin_notice_dismiss', [ __CLASS__, 'statically_admin_notice_dismiss' ] );
-            }
-        } else {
         /* for custom domain */
+        if ( self::is_custom_domain() ) {
             if ( self::admin_pagenow( 'statically' ) ) {
                 add_action( 'admin_init', [ __CLASS__, 'ajax_analytics' ] );
                 add_action( 'admin_init', [ __CLASS__, 'ajax_purge' ] );
@@ -96,7 +85,8 @@ class Statically
         }
 
         /* remove unused options */
-        delete_option( 'statically-illegal-cdnurl-notice-dismissed2' );
+        delete_option( 'statically-admin-notice-dismissed2' );
+        delete_option( 'statically-admin-notice-dismissed3' );
     }
 
     /**
@@ -207,31 +197,6 @@ class Statically
                 )
             );
         }
-    }
-
-    /**
-     * tell people to stop using the Statically CDN URL in other plugin settings
-     * 
-     * @since 0.6.1
-     */
-    public static function statically_admin_notice() {
-        show_message(
-            sprintf(
-                '<div class="statically-illegal-cdnurl-notice notice notice-info is-dismissible">
-                    <p><i class="dashicons dashicons-yes"></i> %s</p>
-                </div>',
-                __( 'Statically is activated, <a href="'.admin_url( 'admin.php?page=statically' ).'">configure it now!</a>', 'statically' )
-            )
-        );
-    }
-
-    /**
-     * update option for CDN URL notice dismiss
-     * 
-     * @since 0.6.1
-     */
-    public static function statically_admin_notice_dismiss() {
-        update_option( 'statically-illegal-cdnurl-notice-dismissed3', 1 );
     }
 
     /**

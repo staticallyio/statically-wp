@@ -56,6 +56,9 @@ Statically is the all-in-one solution for your static assets optimization and de
 
 == Changelog ==
 
+= 1.0.1 =
+* Removed admin notice
+
 = 1.0 =
 * Fixes
 * Removed Debug admin page
