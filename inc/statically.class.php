@@ -52,7 +52,7 @@ class Statically
 
         /* Features */
         add_action( $base_action, [ 'Statically_Emoji', 'hook' ] );
-        add_action( $base_action, [ 'Statically_Favicons', 'hook' ] );
+        add_action( $base_action, [ 'Statically_Icon', 'hook' ] );
         add_action( 'wp_head', [ 'Statically_OG', 'hook' ], 3 );
 
         if ( $options['pagebooster'] ) {
@@ -70,7 +70,6 @@ class Statically
         add_action( 'admin_init', [ 'Statically_Settings', 'register_settings' ] );
         add_action( 'admin_menu', [ 'Statically_Settings', 'add_settings_page' ] );
         add_filter( 'plugin_action_links_' . STATICALLY_BASE, [ __CLASS__, 'add_action_link' ] );
-        add_action( 'admin_menu', [ 'Statically_Debugger', 'add_settings_page' ] );
         add_action( 'admin_enqueue_scripts', [ __CLASS__, 'admin_scripts' ] );
 
         /* admin notices */
@@ -78,13 +77,15 @@ class Statically
 
         /* for non-custom domain */
         if ( ! self::is_custom_domain() ) {
-            /* add illage usage notice */
-            if( empty( get_option( 'statically-illegal-cdnurl-notice-dismissed2' ) ) ) {
-                add_action( 'admin_notices', [ __CLASS__, 'statically_illegal_cdnurl_notice' ] );
+            if ( ! self::admin_pagenow( 'statically' ) ) {
+                /* add admin notice */
+                if( empty( get_option( 'statically-illegal-cdnurl-notice-dismissed3' ) ) ) {
+                    add_action( 'admin_notices', [ __CLASS__, 'statically_admin_notice' ] );
+                }
+            
+                /* ajax for admin notice */
+                add_action( 'wp_ajax_statically_admin_notice_dismiss', [ __CLASS__, 'statically_admin_notice_dismiss' ] );
             }
-        
-            /* ajax for illegal usage notice */
-            add_action( 'wp_ajax_statically_illegal_cdnurl_notice_dismiss', [ __CLASS__, 'statically_illegal_cdnurl_notice_dismiss' ] );
         } else {
         /* for custom domain */
             if ( self::admin_pagenow( 'statically' ) ) {
@@ -95,7 +96,7 @@ class Statically
         }
 
         /* remove unused options */
-        delete_option( 'statically-illegal-cdnurl-notice-dismissed' );
+        delete_option( 'statically-illegal-cdnurl-notice-dismissed2' );
     }
 
     /**
@@ -136,8 +137,6 @@ class Statically
      */
     public static function handle_uninstall_hook() {
         delete_option( 'statically' );
-        delete_option( 'statically-illegal-cdnurl-notice-dismissed' );
-        delete_option( 'statically-illegal-cdnurl-notice-dismissed2' );
     }
 
     /**
@@ -215,13 +214,13 @@ class Statically
      * 
      * @since 0.6.1
      */
-    public static function statically_illegal_cdnurl_notice() {
+    public static function statically_admin_notice() {
         show_message(
             sprintf(
-                '<div class="statically-illegal-cdnurl-notice notice notice-warning is-dismissible">
-                    <p><i class="dashicons dashicons-warning"></i> %s</p>
+                '<div class="statically-illegal-cdnurl-notice notice notice-info is-dismissible">
+                    <p><i class="dashicons dashicons-yes"></i> %s</p>
                 </div>',
-                __( 'Statically Sites or <code>https://cdn.statically.io/sites/</code> has been deprecated. If you are using this URL in other cache plugin settings like <strong>LiteSpeed Cache</strong> or <strong>WP Fastest Cache</strong>, please consider removing it.', 'statically' )
+                __( 'Statically is activated, <a href="'.admin_url( 'admin.php?page=statically' ).'">configure it now!</a>', 'statically' )
             )
         );
     }
@@ -231,8 +230,8 @@ class Statically
      * 
      * @since 0.6.1
      */
-    public static function statically_illegal_cdnurl_notice_dismiss() {
-        update_option( 'statically-illegal-cdnurl-notice-dismissed2', 1 );
+    public static function statically_admin_notice_dismiss() {
+        update_option( 'statically-illegal-cdnurl-notice-dismissed3', 1 );
     }
 
     /**
