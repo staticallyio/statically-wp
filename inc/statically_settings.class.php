@@ -34,6 +34,34 @@ class Statically_Settings
      * @return array array with validated values
      */
     public static function validate_settings( $data ) {
+        if ( ! isset( $data['quality'] ) ) { $data['quality'] = 0; }
+        if ( ! isset( $data['width'] ) ) { $data['width'] = 0; }
+        if ( ! isset( $data['height'] ) ) { $data['height'] = 0; }
+        if ( ! isset( $data['smartresize'] ) ) { $data['smartresize'] = 0; }
+        if ( ! isset( $data['css'] ) ) { $data['css'] = 0; }
+        if ( ! isset( $data['js'] ) ) { $data['js'] = 0; }
+        if ( ! isset( $data['emoji'] ) ) { $data['emoji'] = 0; }
+        if ( ! isset( $data['favicon'] ) ) { $data['favicon'] = 0; }
+        if ( ! isset( $data['favicon_shape'] ) ) { $data['favicon_shape'] = 'rounded'; }
+        if ( ! isset( $data['favicon_bg'] ) ) { $data['favicon_bg'] = '#000000'; }
+        if ( ! isset( $data['favicon_color'] ) ) { $data['favicon_color'] = '#ffffff'; }
+        if ( ! isset( $data['og'] ) ) { $data['og'] = 0; }
+        if ( ! isset( $data['og_theme'] ) ) { $data['og_theme'] = 'light'; }
+        if ( ! isset( $data['og_theme'] ) ) { $data['og_fontsize'] = 'medium'; }
+        if ( ! isset( $data['og_type'] ) ) { $data['og_type'] = 'jpeg'; }
+        if ( ! isset( $data['pagebooster'] ) ) { $data['pagebooster'] = 0; }
+        if ( ! isset( $data['pagebooster_turbo'] ) ) { $data['pagebooster_turbo'] = 0; }
+        if ( ! isset( $data['pagebooster_custom_js'] ) ) { $data['pagebooster_custom_js'] = 0; }
+        if ( ! isset( $data['pagebooster_custom_js_enabled'] ) ) { $data['pagebooster_custom_js_enabled'] = 0; }
+        if ( ! isset( $data['wpadmin'] ) ) { $data['wpadmin'] = 0; }
+        if ( ! isset( $data['relative'] ) ) { $data['relative'] = 0; }
+        if ( ! isset( $data['https'] ) ) { $data['https'] = 0; }
+        if ( ! isset( $data['query_strings'] ) ) { $data['query_strings'] = 0; }
+        if ( ! isset( $data['wpcdn'] ) ) { $data['wpcdn'] = 0; }
+        if ( ! isset( $data['private'] ) ) { $data['private'] = 0; }
+        if ( ! isset( $data['dev'] ) ) { $data['dev'] = 0; }
+        if ( ! isset( $data['replace_cdnjs'] ) ) { $data['replace_cdnjs'] = 0; }
+
         return [
             'url'             => esc_url( $data['url'] ),
             'dirs'            => esc_attr( $data['dirs'] ),
