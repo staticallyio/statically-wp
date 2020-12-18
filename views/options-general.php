@@ -60,7 +60,6 @@
         <tr valign="top" <?php if ( Statically::is_custom_domain() ) echo 'style="display:none"'; ?>>
             <th scope="row">
                 <?php _e( 'Images', 'statically' ); ?>
-                <span class="new"><?php _e( 'New', 'statically' ); ?></span>
             </th>
             <td>
                 <fieldset>
@@ -80,7 +79,7 @@
                 <fieldset>
                     <label for="statically_css">
                         <input type="checkbox" name="statically[css]" id="statically_css" value="1" <?php checked(1, $options['css']) ?> disabled />
-                        <?php _e( 'Help Statically reach <a href="https://www.patreon.com/fransallen" target="_blank">Goal on Patreon</a> so that this feature can be made available to all.', 'statically' ); ?>
+                        <?php _e( 'Help Statically reach <a href="https://www.patreon.com/fransallen" target="_blank">Goal on Patreon</a> to make this feature publicly available.', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>
