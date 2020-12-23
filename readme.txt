@@ -10,32 +10,44 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The best free and fast CDN for WP. Image, CSS, JS optimization. Powered by multi-CDN: Google Cloud CDN, CloudFront, Cloudflare, Fastly, and BunnyCDN.
+Host and optimize image, CSS, and JavaScript files with Statically CDN.
 
 == Description ==
 
-Statically is the all-in-one solution for your static assets optimization and delivery. The multi-CDN feature makes Statically faster and more reliable than other solutions with 700+ points of presence worldwide.
+Statically is the fast and easy way to make your websites load faster. This plugin allows you to easily host and optimize static assets with our fast, reliable global CDN.
 
 [**Statically**](https://statically.io)
 
-#### FEATURES
+== FEATURES ==
 
-* Multi-CDN (Cloudflare, Fastly, BunnyCDN, Google Cloud, and CloudFront)
-* Image Optimization
-* CDN for CSS and JavaScript files
+* Image Optimization (auto-WebP, compression level)
+* CDN for static assets (images, CSS, JavaScript, fonts)
 * CDN for WordPress Core Assets
 * CDN for WordPress Emoji
-* Automagically create beautiful Open Graph images
-* Easily generate a beautiful favicon for your site
+* Create beautiful Open Graph images for social media
+* Generate a beautiful favicon
 * Replace existing CDNJS URL with Statically
+* Powered by multi-CDN (Cloudflare, Fastly, BunnyCDN, Google Cloud, and CloudFront)
 
-#### BENEFITS
+== BENEFITS ==
 
-* Automatically speed up your site by optimizing static assets
-* The most reliable network in its class for your static assets
+* Drastically speed-up your websites by serving static assets with Statically
+* Powered by multi-CDN, offering the most reliable network in its class
 * Lighten your server from static asset traffic loads
 
-#### CONTRIBUTE
+== HOW DOES IT WORK? ==
+
+Statically is made to be simple and easy to use. Optimizing files with Statically is easy as typing a URL into the browser address bar. This plugin works by replacing static links to CDN links. Changed `https://example.com/cat.jpg` to `https://cdn.statically.io/img/example.com/cat.jpg`.
+
+Adding a Statically link in front of your file link will give you the advantage of on-the-fly file optimization. Visitors will access the site faster and enjoy bandwidth savings, so will you.
+
+== PRINCIPLE ==
+
+Optimizing files for your website can be a pain, you have to install plugins for image optimization and CSS/JS minification. But the process is done on your server so it can create loads.
+
+That's why we want to provide a cloud-based solution that is simple and easy to use for anyone. Statically lets you easily compress and resize images as well as minify CSS/JS using our powerful URL-based API. By using Statically, your static assets will be instantly available worldwide on premium networks operated by Google, Amazon, Cloudflare, Fastly, and BunnyCDN which saves money on bandwidth.
+
+== CONTRIBUTE ==
 
 * Anyone is welcome to contribute to the plugin on [GitHub](https://github.com/staticallyio/statically-wp).
 
@@ -53,6 +65,26 @@ Statically is the all-in-one solution for your static assets optimization and de
 1. Upload the "statically" folder to the /wp-content/plugins/ directory;
 2. Activate the Statically plugin through the "Plugins" menu in WordPress;
 3. Access the plugin settings from the "Statically" menu.
+
+== Frequently Asked Questions ==
+
+= I tested it on my site and it didn't work! =
+
+Our service only works for sites that are accessible over the internet. And if you use a firewall, be sure to [whitelist Statically](https://statically.io/docs/whitelisting-statically/). Contact us via the [Contact page](https://statically.io/contact/) or post in the support forums here if you experience difficulty and we'll be happy to help.
+
+= How does multi-CDN work at Statically? =
+
+Statically uses multi-CDN under the **cdn.statically.io** domain to provide fast and reliable service to end users, it will select the fastest server from 5 CDN providers for your location. This is done automatically and no action from you is required.
+
+= Can I use only one preffered CDN? =
+
+No, Statically's services are only available under the **cdn.statically.io** domain and it is multi-CDN enabled to provide the best service performance around the globe.
+
+== Screenshots ==
+
+1. General settings
+2. Speed settings
+3. Extra settings
 
 == Changelog ==
 
@@ -152,9 +184,3 @@ Statically is the all-in-one solution for your static assets optimization and de
 
 = 0.0.1 =
 * First release
-
-== Screenshots ==
-
-1. General settings
-2. Speed settings
-3. Extra settings
