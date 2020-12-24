@@ -80,6 +80,10 @@ Statically uses multi-CDN under the **cdn.statically.io** domain to provide fast
 
 No, Statically's services are only available under the **cdn.statically.io** domain and it is multi-CDN enabled to provide the best service performance around the globe.
 
+= NSFW content =
+
+Statically is a family friendly site and we DO NOT intentionally accept or allow the NSFW types of sites into our program. Learn more about our [TOS here](https://statically.io/policies/terms/).
+
 == Screenshots ==
 
 1. General settings
