@@ -39,7 +39,7 @@ Statically is the fast and easy way to make your websites load faster. This plug
 
 Statically is made to be simple and easy to use. Optimizing files with Statically is easy as typing a URL into the browser address bar. This plugin works by replacing static links to CDN links. Changed `https://example.com/cat.jpg` to `https://cdn.statically.io/img/example.com/cat.jpg`.
 
-Adding a Statically link in front of your file link will give you the advantage of on-the-fly file optimization. Visitors will access the site faster and enjoy bandwidth savings, so will you.
+Adding a Statically link in front of your file link will make it **instantly globally distributed** and give you **the benefit of real-time file optimization**. Visitors will access the site faster and enjoy bandwidth savings, so will you.
 
 == PRINCIPLE ==
 
