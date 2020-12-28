@@ -68,6 +68,10 @@ That's why we want to provide a cloud-based solution that is simple and easy to 
 
 == Frequently Asked Questions ==
 
+= Is this plugin free? =
+
+Yes this plugin is totally free! You may donate to our development via Patreon or Paypal which is found inside the Statically page in the dashboard.
+
 = I tested it on my site and it didn't work! =
 
 Our service only works for sites that are accessible over the internet. And if you use a firewall, be sure to [whitelist Statically](https://statically.io/docs/whitelisting-statically/). Contact us via the [Contact page](https://statically.io/contact/) or post in the support forums here if you experience difficulty and we'll be happy to help.
