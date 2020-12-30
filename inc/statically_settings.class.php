@@ -66,7 +66,6 @@ class Statically_Settings
             'url'             => esc_url( $data['url'] ),
             'dirs'            => esc_attr( $data['dirs'] ),
             'excludes'        => esc_attr( $data['excludes'] ),
-            'qs_excludes'     => esc_attr( $data['qs_excludes'] ),
             'quality'         => (int)( $data['quality'] ),
             'width'           => (int)( $data['width'] ),
             'height'          => (int)( $data['height'] ),

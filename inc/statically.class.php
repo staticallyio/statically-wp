@@ -141,7 +141,6 @@ class Statically
                 'url'            => get_option( 'home' ),
                 'dirs'           => 'wp-content,wp-includes',
                 'excludes'       => '.php',
-                'qs_excludes'    => 'no-statically',
                 'quality'        => '0',
                 'width'          => '0',
                 'height'         => '0',
@@ -226,7 +225,6 @@ class Statically
                 'url'             => get_option( 'home' ),
                 'dirs'            => 'wp-content,wp-includes',
                 'excludes'        => '.php',
-                'qs_excludes'     => 'no-statically',
                 'quality'         => '0',
                 'width'           => '0',
                 'height'          => '0',
@@ -357,19 +355,11 @@ class Statically
      */
     public static function handle_rewrite_hook() {
         $options = self::get_options();
-        $qs_excludes = array_map( 'trim', explode( ',', $options['qs_excludes'] ) );
 
         // check if Statically API Key is set before start rewriting
         if ( ! array_key_exists( 'statically_api_key', $options )
               || strlen( $options['statically_api_key'] ) < 32 ) {
             return;
-        }
-
-        // do not perform rewriting on pages with specified query strings
-        foreach ( $qs_excludes as $qs_exclude ) {
-            if ( !! $qs_exclude && array_key_exists( $qs_exclude, $_GET ) ) {
-                return;
-            }
         }
 
         // check if private is enabled

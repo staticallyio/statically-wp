@@ -183,6 +183,12 @@ body.admin_page_statically-debugger #wpcontent {
 .stly-options a:hover {
   border-color: #e53e3e;
 }
+.stly-options p.description {
+  font-size: 13px!important;
+}
+.stly-options p.description .dashicons {
+  font-size: 16px;
+}
 
 /** Footer */
 .stly-footer {

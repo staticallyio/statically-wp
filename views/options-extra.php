@@ -11,7 +11,7 @@
                 <fieldset>
                     <label for="statically_emoji">
                         <input type="checkbox" name="statically[emoji]" id="statically_emoji" value="1" <?php checked(1, $options['emoji']) ?> />
-                        <?php _e( 'Replace the default WordPress emoji CDN with Statically. Default: <code>ON</code>', 'statically' ); ?>
+                        <?php _e( 'Replace default wp.org Emoji CDN with Statically', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>
@@ -19,19 +19,18 @@
 
         <tr valign="top">
             <th scope="row">
-                <?php _e( 'Favicon', 'statically' ); ?><br>
-                <small>(<?php _e( 'Text to Image', 'statically' ); ?>)</small>
+                <?php _e( 'Favicon', 'statically' ); ?>
             </th>
             <td>
                 <fieldset>
                     <label for="statically_favicon">
                         <input type="checkbox" name="statically[favicon]" id="statically_favicon" value="1" <?php checked(1, $options['favicon']) ?> />
-                        <?php _e( 'Set a favicon for your website using the Statically Favicons service. Default: <code>OFF</code>', 'statically' ); ?>
+                        <?php _e( 'Automatically generate a favicon for your website using the Statically Icon service', 'statically' ); ?>
                     </label>
 
                     <p class="description">
-                        <?php _e( 'This feature allows you to generate a personalized image based on the name of your website using the Statically Favicons service and then use it as your website&#39;s favicon. Use this feature if you haven&#39;t set one.', 'statically' ); ?>
-                        <?php _e( 'See <a href="https://cdn.statically.io/favicons/g/Statically.png" target="_blank">example</a>.', 'statically' ); ?>
+                        <?php _e( 'This feature allows you to generate a personalized image based on the name of your website using the Statically Icon service and then use it as your website&#39;s favicon. Use this feature if you haven&#39;t set one.', 'statically' ); ?>
+                        <?php _e( 'See <a href="https://cdn.statically.io/icon/g/Statically.png" target="_blank">example</a>.', 'statically' ); ?>
                     </p>
 
                     <label for="statically_favicon-shape">
@@ -57,18 +56,17 @@
 
         <tr valign="top">
             <th scope="row">
-                <?php _e( 'Open Graph Image', 'statically' ); ?><br>
-                <small>(<?php _e( 'Text to Image', 'statically' ); ?>)</small>
+                <?php _e( 'Open Graph Image', 'statically' ); ?>
             </th>
             <td>
                 <fieldset>
                     <label for="statically_og">
                         <input type="checkbox" name="statically[og]" id="statically_og" value="1" <?php checked(1, $options['og']) ?> />
-                        <?php _e( 'Enable automatic Open Graph Image service. Default: <code>OFF</code>', 'statically' ); ?>
+                        <?php _e( 'Automatically generate beautiful OG Image for your posts and pages', 'statically' ); ?>
                     </label>
 
                     <p class="description">
-                        <?php _e( 'Turn your post titles into images with the Statically OG Image service and use it as your site&#39;s metadata. Useful to improve visibility on Facebook and Twitter. Check this <a href="https://cdn.statically.io/og/Hello%20World.jpg" target="_blank">example</a>. Learn more about <a href="https://ogp.me" target="_blank">The Open Graph protocol</a>.', 'statically' ); ?>
+                        <?php _e( 'Create beautiful new images from post and page titles using the Statically OG Image service to embed in metadata. Useful for increasing visibility on Facebook and Twitter. Check this <a href="https://cdn.statically.io/og/Hello%20World.jpg" target="_blank">example</a>. Learn more about <a href="https://ogp.me" target="_blank">The Open Graph protocol</a>.', 'statically' ); ?>
                     </p>
 
                     <label for="statically_og-theme">
@@ -101,13 +99,13 @@
 
         <tr valign="top">
             <th scope="row">
-                <?php _e( 'Enable on WP-Admin', 'statically' ); ?>
+                <?php _e( 'WP Admin', 'statically' ); ?>
             </th>
             <td>
                 <fieldset>
                     <label for="statically_wpadmin">
                         <input type="checkbox" name="statically[wpadmin]" id="statically_wpadmin" value="1" <?php checked(1, $options['wpadmin']) ?> />
-                        <?php _e( 'Enable Statically on WP-Admin area. Default: <code>OFF</code>', 'statically' ); ?>
+                        <?php _e( 'Enable Statically functionality in the WP Admin area', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>
@@ -121,7 +119,7 @@
                 <fieldset>
                     <label for="statically_relative">
                         <input type="checkbox" name="statically[relative]" id="statically_relative" value="1" <?php checked(1, $options['relative']) ?> />
-                        <?php _e( 'Enable CDN for relative paths. Default: <code>ON</code>', 'statically' ); ?>
+                        <?php _e( 'Enable CDN for relative paths', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>
@@ -135,7 +133,7 @@
                 <fieldset>
                     <label for="statically_https">
                         <input type="checkbox" name="statically[https]" id="statically_https" value="1" <?php checked(1, $options['https']) ?> />
-                        <?php _e( 'Enable CDN for HTTPS connections. Default: <code>ON</code>', 'statically' ); ?>
+                        <?php _e( 'Enable CDN for HTTPS connections', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>
@@ -149,7 +147,7 @@
                 <fieldset>
                     <label for="statically_query_strings">
                         <input type="checkbox" name="statically[query_strings]" id="statically_query_strings" value="1" <?php checked(1, $options['query_strings']) ?> />
-                        <?php _e( 'Strip query strings like <code>?ver=1.0</code> from assets. Default: <code>OFF</code>', 'statically' ); ?>
+                        <?php _e( 'Strip all query strings like <code>?ver=1.0</code> from static assets', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>
@@ -163,7 +161,7 @@
                 <fieldset>
                     <label for="statically_dev">
                         <input type="checkbox" name="statically[dev]" id="statically_dev" value="1" <?php checked(1, $options['dev']) ?> />
-                        <?php _e( 'Enable developer mode to add more options. Default: <code>OFF</code>', 'statically' ); ?>
+                        <?php _e( 'Enable developer mode to add more options', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>

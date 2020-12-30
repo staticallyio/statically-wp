@@ -31,6 +31,9 @@ $statically_logo_url = plugin_dir_url( STATICALLY_FILE ) . 'static/statically.sv
         <li>
             <a data-stly-tab="general" href="#general">
                 <?php _e( 'General', 'statically' ); ?>
+                <?php if ( ! Statically::is_custom_domain() ) : ?>
+                <span class="new"><?php _e( 'New', 'statically' ); ?></span>
+                <?php endif; ?>
             </a>
         </li>
         <?php if ( Statically::is_custom_domain() ) : ?>

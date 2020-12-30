@@ -15,7 +15,7 @@
                 <fieldset>
                     <label for="statically_replace-cdnjs">
                         <input type="checkbox" name="statically[replace_cdnjs]" id="statically_replace-cdnjs" value="1" <?php checked(1, $options['replace_cdnjs']) ?> />
-                        <?php _e( 'Replace existing CDNJS URL with Statically. Default: <code>OFF</code>', 'statically' ); ?>
+                        <?php _e( 'Replace existing CDNJS links with Statically links', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>
@@ -29,7 +29,7 @@
                 <fieldset>
                     <label for="statically_pagebooster">
                         <input type="checkbox" name="statically[pagebooster]" id="statically_pagebooster" value="1" <?php checked(1, $options['pagebooster']) ?> />
-                        <?php _e( 'Automatically speeds up your pages using latest progressive enhancements. Default: <code>OFF</code>', 'statically' ); ?>
+                        <?php _e( 'A lightweight javascript library to make inner pages load faster', 'statically' ); ?>
                     </label>
                 </fieldset>
 
@@ -45,7 +45,7 @@
                     <label for="statically_pagebooster-turbo">
                         <h4><?php _e( 'Turbo', 'statically' ); ?></h4>
                         <input type="checkbox" name="statically[pagebooster_turbo]" id="statically_pagebooster-turbo" value="1" <?php checked(1, $options['pagebooster_turbo']) ?> />
-                        <?php _e( 'Enable cache and URL pre-fetching on mouse hover.', 'statically' ); ?>
+                        <?php _e( 'Enable cache and URL pre-fetching on mouse hover', 'statically' ); ?>
                     </label>
                 </fieldset>
 
@@ -67,7 +67,7 @@
                         <textarea type="text" name="statically[pagebooster_custom_js]" id="statically_pagebooster-custom-js"><?php echo $options['pagebooster_custom_js']; ?></textarea><br>
 
                         <input type="checkbox" name="statically[pagebooster_custom_js_enabled]" id="statically_pagebooster-custom-js-enabled" value="1" <?php checked(1, $options['pagebooster_custom_js_enabled']) ?> />
-                        <?php _e( 'Enable this custom JS will overwrite all settings above.', 'statically' ); ?>
+                        <?php _e( 'Enable this custom JS will overwrite all settings above', 'statically' ); ?>
 
                         <p class="description"><?php _e( 'This feature uses F3H.js as the main function, matching this setting with your site to achieve the best possible progressive WordPress. Learn more how to configure F3H <a href="https://statically.io/go/f3h" target="_blank">here</a>.', 'statically' ); ?></p>
                     </label>

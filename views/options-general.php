@@ -65,7 +65,7 @@
                 <fieldset>
                     <label for="statically_img">
                         <input type="checkbox" name="statically[img]" id="statically_img" value="1" <?php checked(1, $options['img']) ?> />
-                        <?php _e( 'Optimize image files with CDN (wp-content folder only). Default: <code>ON</code>', 'statically' ); ?>
+                        <?php _e( 'Optimize image files with CDN (wp-content folder only)', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>
@@ -74,12 +74,13 @@
         <tr valign="top" <?php if ( Statically::is_custom_domain() ) echo 'style="display:none"'; ?>>
             <th scope="row">
                 <?php _e( 'CSS', 'statically' ); ?>
+                <span class="new"><?php _e( 'New', 'statically' ); ?></span>
             </th>
             <td>
                 <fieldset>
                     <label for="statically_css">
                         <input type="checkbox" name="statically[css]" id="statically_css" value="1" <?php checked(1, $options['css']) ?> />
-                        <?php _e( 'Serve and automatically minify CSS files with CDN (wp-content folder only). Default: <code>OFF</code>', 'statically' ); ?>
+                        <?php _e( 'Serve and automatically minify CSS files with CDN (wp-content folder only)', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>
@@ -93,7 +94,7 @@
                 <fieldset>
                     <label for="statically_js">
                         <input type="checkbox" name="statically[js]" id="statically_js" value="1" <?php checked(1, $options['js']) ?> />
-                        <?php _e( 'Serve and automatically minify JavaScript files with CDN (wp-content folder only). Default: <code>OFF</code>', 'statically' ); ?>
+                        <?php _e( 'Serve and automatically minify JavaScript files with CDN (wp-content folder only)', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>
