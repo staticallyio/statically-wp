@@ -96,6 +96,10 @@ Statically is a family friendly site and we DO NOT intentionally accept or allow
 
 == Changelog ==
 
+= 1.1 =
+* Add CSS CDN options
+* Updated descriptions
+
 = 1.0.2 =
 * Fixes
 
