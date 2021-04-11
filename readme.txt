@@ -97,7 +97,7 @@ Statically is a family friendly site and we DO NOT intentionally accept or allow
 == Changelog ==
 
 = 1.1 =
-* Add CSS CDN options
+* Added CSS CDN option
 * Fixed incorrect WP subdir URL rewriting
 * Updated descriptions
 
