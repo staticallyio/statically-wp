@@ -3,7 +3,7 @@
  * Plugin Name: Statically
  * Plugin URI:  https://statically.io/wordpress/
  * Description: Host and optimize image, CSS, and JavaScript files with Statically CDN.
- * Version:     1.3
+ * Version:     1.1
  * Author:      Statically
  * Author URI:  https://statically.io
  * License:     GPLv2 or later
@@ -14,7 +14,7 @@
 defined( 'ABSPATH' ) OR exit;
 
 /* constants */
-define( 'STATICALLY_VERSION', '1.3' );
+define( 'STATICALLY_VERSION', '1.1' );
 define( 'STATICALLY_FILE', __FILE__ );
 define( 'STATICALLY_DIR', dirname( __FILE__ ) );
 define( 'STATICALLY_BASE', plugin_basename( __FILE__ ) );

@@ -96,14 +96,9 @@ Statically is a family friendly site and we DO NOT intentionally accept or allow
 
 == Changelog ==
 
-= 1.3 =
-* Fixed incorrect WP subdir URL rewriting
-
-= 1.2 =
-* Fixes
-
 = 1.1 =
 * Add CSS CDN options
+* Fixed incorrect WP subdir URL rewriting
 * Updated descriptions
 
 = 1.0.2 =
