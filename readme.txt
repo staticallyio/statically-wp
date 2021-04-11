@@ -5,7 +5,7 @@ Donate link: https://www.patreon.com/fransallen
 Tags: images, optimization, minification, processing, cdn, google cloud, cloudfront, cloudflare
 Requires at least: 4.6
 Requires PHP: 7.2
-Tested up to: 5.6
+Tested up to: 5.7
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -95,6 +95,12 @@ Statically is a family friendly site and we DO NOT intentionally accept or allow
 3. Extra settings
 
 == Changelog ==
+
+= 1.3 =
+* Fixed incorrect WP subdir URL rewriting
+
+= 1.2 =
+* Fixes
 
 = 1.1 =
 * Add CSS CDN options

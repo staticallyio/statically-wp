@@ -126,12 +126,7 @@ class Statically_Rewriter
 
         // Set default CDN URL: https://cdn.statically.io/sites/example.com
         // before doing any rewrites
-        if ( preg_match( "/$blog_path_regex/i", $blog_url ) ) {
-            // support for subdir
-            $cdn_url = Statically::CDN . 'sites/' . parse_url( $this->cdn_url, PHP_URL_HOST ) . $this->blog_path;
-        } else {
-            $cdn_url = Statically::CDN . 'sites/' . parse_url( $this->cdn_url, PHP_URL_HOST );
-        }
+        $cdn_url = Statically::CDN . 'sites/' . parse_url( $this->cdn_url, PHP_URL_HOST );
 
         // Use user specified domain
         if ( Statically::is_custom_domain() ) {
