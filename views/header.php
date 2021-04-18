@@ -9,7 +9,7 @@ $statically_logo_url = plugin_dir_url( STATICALLY_FILE ) . 'static/statically.sv
 <header class="stly-header-container">
     <div class="stly-header">
         <div class="logo">
-            <a href="https://statically.io" target="_blank" title="<?php _e( 'Optimization for your website static assets.', 'statically' ); ?>">
+            <a href="https://statically.io" target="_blank">
                 <img src="<?php echo $statically_logo_url; ?>" />
             </a>
         </div>
@@ -58,7 +58,7 @@ $statically_logo_url = plugin_dir_url( STATICALLY_FILE ) . 'static/statically.sv
         <li><a data-stly-tab="tools" href="#tools"><?php _e( 'Tools ', 'statically' ); ?></a></li>
         <li>
             <a class="support-me" data-stly-tab="support-me" href="#support-me">
-                <?php _e( 'Donate $1', 'statically' ); ?>
+                <?php _e( 'Donate', 'statically' ); ?>
             </a>
         </li>
     <?php endif; ?>

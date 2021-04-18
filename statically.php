@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: Statically
+ * Plugin Name: statically.io
  * Plugin URI:  https://statically.io/wordpress/
- * Description: Host and optimize image, CSS, and JavaScript files with Statically CDN.
+ * Description: Host and optimize image, CSS, and JavaScript files with statically.io CDN.
  * Version:     1.1
- * Author:      Statically
+ * Author:      statically.io
  * Author URI:  https://statically.io
  * License:     GPLv2 or later
  * Text Domain: statically

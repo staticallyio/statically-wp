@@ -11,7 +11,7 @@
 
     <div class="social">
         <span class="rating">
-            <?php _e( '<span class="wide-display">Do you think this is useful? Be kind and</span> rate Statically', 'statically' ); ?>
+            <?php _e( '<span class="wide-display">Do you think this is useful? Be kind and</span> rate statically.io', 'statically' ); ?>
             <a class="stars" href="https://wordpress.org/support/plugin/statically/reviews/?filter=5#new-post" target="_blank">
                 <i class="dashicons dashicons-star-filled"></i>
                 <i class="dashicons dashicons-star-filled"></i>

@@ -7,7 +7,7 @@
     </p>
 
     <section class="tools-content">
-        <h3><?php _e( 'Brought to you by Statically', 'statically' ); ?></h3>
+        <h3><?php _e( 'Brought to you by statically.io', 'statically' ); ?></h3>
 
         <div class="tools">
             <a class="tool" href="https://statically.io/docs/using-screenshot/" target="_blank">

@@ -3,7 +3,7 @@
 <div data-stly-layout="general">
     <?php if ( ! statically_use_https() ) { ?>
         <p><i class="dashicons dashicons-warning" style="color:#ffb900"></i>
-        <?php _e( 'In order for Statically to work, website must have HTTPS enabled.', 'statically' ); ?>
+        <?php _e( 'In order for statically.io to work, website must have HTTPS enabled.', 'statically' ); ?>
         </p>
     <?php } ?>
 
@@ -11,7 +11,7 @@
     <table class="form-table">
         <tr valign="top">
             <th scope="row">
-                <?php _e( 'Statically Zone', 'statically' ); ?>
+                <?php _e( 'Zone URL', 'statically' ); ?>
             </th>
             <td>
                 <fieldset>
@@ -29,7 +29,7 @@
 
         <tr valign="top">
             <th scope="row">
-                <?php _e( 'Statically API Key', 'statically' ); ?>
+                <?php _e( 'API Key', 'statically' ); ?>
             </th>
             <td>
                 <fieldset>
@@ -38,7 +38,7 @@
                     </label>
 
                     <p class="description">
-                        <?php _e( 'Statically API key to make this plugin working. Never share it to anybody! Treat this API key as a password. &#8212; <a href="https://statically.io/wordpress/" target="_blank">Get one here</a>', 'statically' ); ?>
+                        <?php _e( 'API key to make this plugin working. Never share it to anybody! Treat this API key as a password. &#8212; <a href="https://statically.io/wordpress/" target="_blank">Get one here</a>', 'statically' ); ?>
                     </p>
                 </fieldset>
             </td>
@@ -46,7 +46,7 @@
 
         <tr valign="top" <?php if ( ! Statically::is_custom_domain() ) echo 'style="display:none"'; ?>>
             <th scope="row">
-                <?php _e( 'Statically Zone ID', 'statically' ); ?>
+                <?php _e( 'Zone ID', 'statically' ); ?>
             </th>
             <td>
                 <fieldset>

@@ -11,7 +11,7 @@
                 <fieldset>
                     <label for="statically_emoji">
                         <input type="checkbox" name="statically[emoji]" id="statically_emoji" value="1" <?php checked(1, $options['emoji']) ?> />
-                        <?php _e( 'Replace default wp.org Emoji CDN with Statically', 'statically' ); ?>
+                        <?php _e( 'Replace default wp.org Emoji CDN with statically.io', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>
@@ -25,12 +25,12 @@
                 <fieldset>
                     <label for="statically_favicon">
                         <input type="checkbox" name="statically[favicon]" id="statically_favicon" value="1" <?php checked(1, $options['favicon']) ?> />
-                        <?php _e( 'Automatically generate a favicon for your website using the Statically Icon service', 'statically' ); ?>
+                        <?php _e( 'Automatically generate a favicon for your website using the statically.io Icon service', 'statically' ); ?>
                     </label>
 
                     <p class="description">
-                        <?php _e( 'This feature allows you to generate a personalized image based on the name of your website using the Statically Icon service and then use it as your website&#39;s favicon. Use this feature if you haven&#39;t set one.', 'statically' ); ?>
-                        <?php _e( 'See <a href="https://cdn.statically.io/icon/g/Statically.png" target="_blank">example</a>.', 'statically' ); ?>
+                        <?php _e( 'This feature allows you to generate a personalized image based on the name of your website using the statically.io Icon service and then use it as your website&#39;s favicon. Use this feature if you haven&#39;t set one.', 'statically' ); ?>
+                        <?php _e( 'See <a href="https://cdn.statically.io/icon/g/statically.io.png" target="_blank">example</a>.', 'statically' ); ?>
                     </p>
 
                     <label for="statically_favicon-shape">
@@ -66,7 +66,7 @@
                     </label>
 
                     <p class="description">
-                        <?php _e( 'Create beautiful new images from post and page titles using the Statically OG Image service to embed in metadata. Useful for increasing visibility on Facebook and Twitter. Check this <a href="https://cdn.statically.io/og/Hello%20World.jpg" target="_blank">example</a>. Learn more about <a href="https://ogp.me" target="_blank">The Open Graph protocol</a>.', 'statically' ); ?>
+                        <?php _e( 'Create beautiful new images from post and page titles using the statically.io OG Image service to embed in metadata. Useful for increasing visibility on Facebook and Twitter. Check this <a href="https://cdn.statically.io/og/Hello%20World.jpg" target="_blank">example</a>. Learn more about <a href="https://ogp.me" target="_blank">The Open Graph protocol</a>.', 'statically' ); ?>
                     </p>
 
                     <label for="statically_og-theme">
@@ -105,7 +105,7 @@
                 <fieldset>
                     <label for="statically_wpadmin">
                         <input type="checkbox" name="statically[wpadmin]" id="statically_wpadmin" value="1" <?php checked(1, $options['wpadmin']) ?> />
-                        <?php _e( 'Enable Statically functionality in the WP Admin area', 'statically' ); ?>
+                        <?php _e( 'Enable statically.io functionality in the WP Admin area', 'statically' ); ?>
                     </label>
                 </fieldset>
             </td>
