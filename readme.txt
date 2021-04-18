@@ -96,6 +96,9 @@ statically.io is a family friendly site and we DO NOT intentionally accept or al
 
 == Changelog ==
 
+= 1.1.1 =
+* Rebranding to statically.io
+
 = 1.1 =
 * Added CSS CDN option
 * Fixed incorrect WP subdir URL rewriting
