@@ -184,8 +184,15 @@ class Statically_Rewriter
                 $asset[0] = str_replace( $asset[0], $this->image_tranformations() . $asset[0], $asset[0] );
             }
 
+            // support custom Images path
+            if ( defined('STATICALLY_IMAGES_PATH') ) {
+                $images_path = STATICALLY_IMAGES_PATH;
+            } else {
+                $images_path = '/img';
+            }
+
             // use /img/
-            $cdn_url = str_replace( '/sites', '/img', $cdn_url );
+            $cdn_url = str_replace( '/sites', $images_path, $cdn_url );
 
             // if user use a custom domain
             if ( Statically::is_custom_domain() && ( $this->quality || $this->width || $this->height || $this->webp ) ) {
@@ -195,7 +202,7 @@ class Statically_Rewriter
 
         // SVG image
         if ( preg_match( '/\.svg/i', $asset[0] ) ) {
-            $cdn_url = str_replace( '/sites', '/img', $cdn_url );
+            $cdn_url = str_replace( '/sites', $images_path, $cdn_url );
         }
 
         // is it a protocol independent URL?
