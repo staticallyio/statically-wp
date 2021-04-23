@@ -128,6 +128,12 @@ class Statically_Rewriter
         // before doing any rewrites
         $cdn_url = Statically::CDN . 'sites/' . parse_url( $this->cdn_url, PHP_URL_HOST );
 
+        // Set default Images path and support custom Images path
+        $images_path = '/img';
+        if ( defined('STATICALLY_IMAGES_PATH') ) {
+            $images_path = STATICALLY_IMAGES_PATH;
+        }
+
         // Use user specified domain
         if ( Statically::is_custom_domain() ) {
             $cdn_url = $this->cdn_url;
@@ -182,13 +188,6 @@ class Statically_Rewriter
             // relative URL
             if ( $this->relative && ! strstr( $asset[0], $blog_url ) ) {
                 $asset[0] = str_replace( $asset[0], $this->image_tranformations() . $asset[0], $asset[0] );
-            }
-
-            // support custom Images path
-            if ( defined('STATICALLY_IMAGES_PATH') ) {
-                $images_path = STATICALLY_IMAGES_PATH;
-            } else {
-                $images_path = '/img';
             }
 
             // use /img/
